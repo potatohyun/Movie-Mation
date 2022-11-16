@@ -48,7 +48,7 @@
                 27,
                 53
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 2492.377,
             "poster_path": "https://image.tmdb.org/t/p/w500/b6IRp6Pl2Fsq37r9jFhGoLtaqHm.jpg",
             "release_date": "2022-10-06",
@@ -88,7 +88,7 @@
                 28,
                 35
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 2076.848,
             "poster_path": "https://image.tmdb.org/t/p/w500/85zufUxhD97k2s5Bu2u101Qd8Sg.jpg",
             "release_date": "2022-10-26",
@@ -147,7 +147,7 @@
                 28,
                 14
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 1481.229,
             "poster_path": "https://image.tmdb.org/t/p/w500/kjFDIlUCJkcpFxYKtE6OsGcAfQQ.jpg",
             "release_date": "2022-10-25",
@@ -167,7 +167,7 @@
                 28,
                 10752
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 2583.55,
             "poster_path": "https://image.tmdb.org/t/p/w500/66mrr3AK6grmkfGJ1wlCP8dkzjM.jpg",
             "release_date": "2022-05-03",
@@ -242,7 +242,7 @@
                 53,
                 9648
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 1135.787,
             "poster_path": "https://image.tmdb.org/t/p/w500/aGBuiirBIQ7o64FmJxO53eYDuro.jpg",
             "release_date": "2022-09-15",
@@ -495,7 +495,7 @@
                 53,
                 18
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 844.427,
             "poster_path": "https://image.tmdb.org/t/p/w500/2symxAMYXpJ9mJ8YOc2b5ZEKIAQ.jpg",
             "release_date": "2022-06-17",
@@ -617,7 +617,7 @@
                 10751,
                 14
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 1347.998,
             "poster_path": "https://image.tmdb.org/t/p/w500/8ZJjRunZbkMSXcRHiqAdQiecXYz.jpg",
             "release_date": "2022-08-24",
@@ -658,7 +658,7 @@
                 28,
                 18
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 683.592,
             "poster_path": "https://image.tmdb.org/t/p/w500/ugiL6wIhl1OfPyv1gqLkTe45jLl.jpg",
             "release_date": "2022-02-01",
@@ -936,7 +936,7 @@
                 27,
                 53
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 537.412,
             "poster_path": "https://image.tmdb.org/t/p/w500/3zunvPLgM9qGFr8ob2BpaKSuAJI.jpg",
             "release_date": "2022-01-23",
@@ -956,7 +956,7 @@
                 14,
                 53
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 524.556,
             "poster_path": "https://image.tmdb.org/t/p/w500/weZUBP2WvRwso1wTMNp3JK96ULS.jpg",
             "release_date": "2022-01-28",
@@ -1056,7 +1056,7 @@
             "genre_ids": [
                 27
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 444.246,
             "poster_path": "https://image.tmdb.org/t/p/w500/gb6rq2nD0jRrN0dCzigg2MxXNsB.jpg",
             "release_date": "2011-08-09",
@@ -1094,7 +1094,7 @@
                 53,
                 28
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 546.603,
             "poster_path": "https://image.tmdb.org/t/p/w500/g29dShv0wHJUvif2KPq039imds5.jpg",
             "release_date": "2022-07-01",
@@ -1155,7 +1155,7 @@
                 9648,
                 53
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 883.308,
             "poster_path": "https://image.tmdb.org/t/p/w500/iZvzMpREGiqDQ5eYbx8z70qPgst.jpg",
             "release_date": "2022-08-12",
@@ -1174,7 +1174,7 @@
                 27,
                 53
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 464.444,
             "poster_path": "https://image.tmdb.org/t/p/w500/dhnFKLefUEFTq35XGM6GpKUyi4D.jpg",
             "release_date": "2022-03-25",
@@ -1213,7 +1213,7 @@
                 16,
                 35
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 492.832,
             "poster_path": "https://image.tmdb.org/t/p/w500/vwYx8HHQFlKFVK3Hs8U0Au6nKGa.jpg",
             "release_date": "2021-11-26",
@@ -1233,7 +1233,7 @@
                 14,
                 12
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 472.729,
             "poster_path": "https://image.tmdb.org/t/p/w500/a3ZpDsvNCQUOD7ApAs9y3mFwVU4.jpg",
             "release_date": "2022-05-26",
@@ -1369,7 +1369,7 @@
             "genre_ids": [
                 53
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 425.741,
             "poster_path": "https://image.tmdb.org/t/p/w500/g5cEKhHn2NSH18FxASF8UT0LfsC.jpg",
             "release_date": "2022-05-12",
@@ -1608,7 +1608,7 @@
                 14,
                 27
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 378.074,
             "poster_path": "https://image.tmdb.org/t/p/w500/tMJnQ3loIIIjkX5pVxv5foMJeaz.jpg",
             "release_date": "2022-09-02",
@@ -1645,7 +1645,7 @@
             "genre_ids": [
                 35
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 419.378,
             "poster_path": "https://image.tmdb.org/t/p/w500/nIwNj5OJksZ7IIZDQT3cgVeYlPh.jpg",
             "release_date": "2022-10-23",
@@ -1663,7 +1663,7 @@
             "genre_ids": [
                 27
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 340.355,
             "poster_path": "https://image.tmdb.org/t/p/w500/kkWEQx1qJfdOkCvXQTIOQDrMaa1.jpg",
             "release_date": "2022-07-05",
@@ -1744,7 +1744,7 @@
                 53,
                 9648
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 348.455,
             "poster_path": "https://image.tmdb.org/t/p/w500/z0iZuYNM0hUyHZeldIdXf4aSrPy.jpg",
             "release_date": "2022-09-09",
@@ -1762,7 +1762,7 @@
             "genre_ids": [
                 53
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 315.528,
             "poster_path": "https://image.tmdb.org/t/p/w500/1iGVhDwTaLMPYVK2DeOLa1uAKjN.jpg",
             "release_date": "2022-08-25",
@@ -1782,7 +1782,7 @@
                 28,
                 878
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 394.997,
             "poster_path": "https://image.tmdb.org/t/p/w500/nBaVsNvUxIuvhPw3xTaAJIw8me4.jpg",
             "release_date": "2022-10-17",
@@ -1820,7 +1820,7 @@
             "genre_ids": [
                 10402
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 446.343,
             "poster_path": "https://image.tmdb.org/t/p/w500/gimlLbjGjZBnktEH15eLER9XKne.jpg",
             "release_date": "2018-07-06",
@@ -1919,7 +1919,7 @@
                 27,
                 53
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 331.086,
             "poster_path": "https://image.tmdb.org/t/p/w500/gLnrBoSENk32SKjHDiZv7E4zwzK.jpg",
             "release_date": "2022-10-01",
@@ -2002,7 +2002,7 @@
                 10751,
                 10770
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 357.534,
             "poster_path": "https://image.tmdb.org/t/p/w500/tn3GWm0Erehkpur8PUuYWxGpul5.jpg",
             "release_date": "2022-10-06",
@@ -2062,7 +2062,7 @@
                 28,
                 18
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 618.86,
             "poster_path": "https://image.tmdb.org/t/p/w500/4njdAkiBdC5LnFApeXSkFQ78GdT.jpg",
             "release_date": "2022-09-08",
@@ -2158,7 +2158,7 @@
                 27,
                 53
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 296.969,
             "poster_path": "https://image.tmdb.org/t/p/w500/g4Tg6R1MUTw0hef6Q7ohZHWk3O8.jpg",
             "release_date": "2022-09-15",
@@ -2196,7 +2196,7 @@
             "genre_ids": [
                 27
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 316.474,
             "poster_path": "https://image.tmdb.org/t/p/w500/3Ib8vlWTrAKRrTWUrTrZPOMW4jp.jpg",
             "release_date": "2022-02-24",
@@ -2319,10 +2319,10 @@
                 14,
                 53
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 258.044,
             "poster_path": "https://image.tmdb.org/t/p/w500/A2ouWngHdomaAyFAPMI7VOpOLvS.jpg",
-            "release_date": "2001-01-01",
+            "release_date": "",
             "title": "Terrifier 3",
             "vote_average": 0,
             "vote_count": 0,
@@ -2339,7 +2339,7 @@
                 80,
                 53
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 317.84,
             "poster_path": "https://image.tmdb.org/t/p/w500/b9ykj4v8ykjRoGB7SpI1OuxblNU.jpg",
             "release_date": "2022-09-02",
@@ -2380,7 +2380,7 @@
                 16,
                 10751
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 311.658,
             "poster_path": "https://image.tmdb.org/t/p/w500/wZccw4Hj9ZF1yimnfPsX9rl3HvB.jpg",
             "release_date": "2022-10-04",
@@ -2789,7 +2789,7 @@
             "genre_ids": [
                 53
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 291.185,
             "poster_path": "https://image.tmdb.org/t/p/w500/1uy2PNFwtkqH3mhGd6irk5aeIrF.jpg",
             "release_date": "2022-02-01",
@@ -2948,7 +2948,7 @@
             "genre_ids": [
                 28
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 266.899,
             "poster_path": "https://image.tmdb.org/t/p/w500/ksxiXqwPuEjh3gct1zUpyzNoQFt.jpg",
             "release_date": "2022-02-01",
@@ -2988,7 +2988,7 @@
                 35,
                 10751
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 256.321,
             "poster_path": "https://image.tmdb.org/t/p/w500/k2v9xSPtiyxCNxaRGtj7COwdgG3.jpg",
             "release_date": "2022-07-15",
@@ -3008,7 +3008,7 @@
                 28,
                 14
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 269.719,
             "poster_path": "https://image.tmdb.org/t/p/w500/xvjCiv1xNlK1kNnoe1nul899vIp.jpg",
             "release_date": "2022-10-09",
@@ -3084,7 +3084,7 @@
             "genre_ids": [
                 16
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 277.643,
             "poster_path": "https://image.tmdb.org/t/p/w500/ik65OsEXbik1I0Di7SX9Sqv04e9.jpg",
             "release_date": "2022-10-24",
@@ -3123,7 +3123,7 @@
                 10770,
                 28
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 250.146,
             "poster_path": "https://image.tmdb.org/t/p/w500/2OOYNZLKjdX8Z5KNyz7zZnHmodJ.jpg",
             "release_date": "2022-03-19",
@@ -3221,7 +3221,7 @@
                 878,
                 35
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 259.249,
             "poster_path": "https://image.tmdb.org/t/p/w500/bm77tBJy28DA1DzP7qExKOPWsEL.jpg",
             "release_date": "2022-09-22",
@@ -3402,7 +3402,7 @@
                 35,
                 10770
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 222.299,
             "poster_path": "https://image.tmdb.org/t/p/w500/ciRq9QUBpFWNsFKs2opG5tP157.jpg",
             "release_date": "2022-09-27",
@@ -3543,7 +3543,7 @@
                 37,
                 53
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 231.834,
             "poster_path": "https://image.tmdb.org/t/p/w500/uvPHL0ADhbYGFBVpAaWiV0wOrOJ.jpg",
             "release_date": "2022-05-05",
@@ -3621,7 +3621,7 @@
                 27,
                 9648
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 207.615,
             "poster_path": "https://image.tmdb.org/t/p/w500/zlX4WdEMzVomRukPjVQx6U9jtBS.jpg",
             "release_date": "2022-03-11",
@@ -3661,7 +3661,7 @@
                 12,
                 10751
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 210.499,
             "poster_path": "https://image.tmdb.org/t/p/w500/akWDID6zfsWHJhGCAAcbwbytU55.jpg",
             "release_date": "2022-09-30",
@@ -3759,7 +3759,7 @@
                 53,
                 27
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 207.443,
             "poster_path": "https://image.tmdb.org/t/p/w500/i0z8g2VRZP3dhVvvSMilbOZMKqR.jpg",
             "release_date": "2022-01-28",
@@ -3779,7 +3779,7 @@
                 80,
                 53
             ],
-            "overview": "줄거리 정보가 없습니다.",
+            "overview": "",
             "popularity": 220.854,
             "poster_path": "https://image.tmdb.org/t/p/w500/lG56H40Y1BuHSPoWtEgDJsSgDBZ.jpg",
             "release_date": "2022-06-03",

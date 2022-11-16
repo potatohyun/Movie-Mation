@@ -3,14 +3,14 @@ from django.conf import settings
 
 # Create your models here.
 class Genre(models.Model):
-    pass
+    name = models.CharField(max_length=70, default='')
 
 class Movie(models.Model):
     # user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     movie_id = models.IntegerField() # 영화 id
     title = models.CharField(max_length=100) # 제목
     adult = models.BooleanField()
-    # genre_ids = models.ManyToManyField(Genre)
+    genre_ids = models.ManyToManyField(Genre)
     poster_path = models.TextField()
     overview = models.TextField() # 줄거리
     popularity = models.FloatField()
