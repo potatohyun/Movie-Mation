@@ -8,6 +8,7 @@ API_KEY = '90fd11e81789473ce37dc17f57e12a12'
 popular_movies = 'popular_movie.json'
 movies_genre = 'genre.json'
 
+
 def TMDBapi():
     result = []
     idx = 0
@@ -16,16 +17,14 @@ def TMDBapi():
     for page in range(1,pages+1):
         URL = f'https://api.themoviedb.org/3/movie/popular?api_key={API_KEY}&language=ko-KR&page='+str(page)
         response = requests.get(URL).json()['results']
-#         pprint(response)
         for i in range(len(response)):
             del response[i]["backdrop_path"]
             del response[i]["original_title"]
             del response[i]["original_language"]
             del response[i]["video"]
-            # del response[i]["vote_count"]
             response[i]["movie_id"] = response[i]["id"]
             del response[i]["id"]
-            del response[i]["genre_ids"]
+            # del response[i]["genre_ids"]
             response[i]["poster_path"] = 'https://image.tmdb.org/t/p/w500'+response[i]["poster_path"]
             templates = {
                 "model": "movies.movies_movie",
@@ -37,31 +36,28 @@ def TMDBapi():
             templates["pk"] = idx
             templates["fields"] = response[i]
             result.append(templates)
-        # pprint(result)
     return result
-# TMDBapi()
 
-# def TMDBapiGenre():
-#     URL = 'https://api.themoviedb.org/3/genre/movie/list?api_key={API_KEY}&language=ko-KR'
-#     response = requests.get(URL).json()['genres']
 
-#     for genre in response:
-#         temp= copy.deepcopy(genre)
-#         del genre['id']
-#         del genre['name']
-#         genre['model'] = 'movies.movies_genre'
-#         genre['fields'] = temp
+def TMDBapiGenre():
+    URL = f'https://api.themoviedb.org/3/genre/movie/list?api_key={API_KEY}&language=ko-KR'
+    response = requests.get(URL).json()['genres']
+    print(response)
+    for genre in response:
+        temp= copy.deepcopy(genre)
+        del genre['id']
+        del genre['name']
+        genre['model'] = 'movies.movies_genre'
+        genre['fields'] = temp
 
-#     return response
+    return response
+
 
 
 with open(popular_movies, 'w',encoding='utf=8') as file:
     json.dump(TMDBapi(),file,ensure_ascii=False,indent=4)
- 
-# with open(movies_genre, 'w',encoding='utf=8') as file:
-#     json.dump(TMDBapiGenre(),file,ensure_ascii=False,indent=4)
-'''
-'''
+with open(movies_genre, 'w',encoding='utf=8') as file:
+    json.dump(TMDBapiGenre(),file,ensure_ascii=False,indent=4)
 
 '''
  {'adult': False,
