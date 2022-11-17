@@ -15,17 +15,9 @@ def movies_list(request):
     movies = get_list_or_404(Movie)
     serializer = MovieListSerializer(movies, many=True)
     return Response(serializer.data)
-    pass
 
-    #     if request.method == 'GET':
-    #     # articles = Article.objects.all()
-    #     articles = get_list_or_404(Article)
-    #     serializer = ArticleListSerializer(articles, many=True)
-    #     return Response(serializer.data)
-
-    # elif request.method == 'POST':
-    #     serializer = ArticleSerializer(data=request.data)
-    #     if serializer.is_valid(raise_exception=True):
-    #         serializer.save()
-    #         # serializer.save(user=request.user)
-    #         return Response(serializer.data, status=status.HTTP_201_CREATED)
+@api_view(['GET'])
+def movies_detail(request,movies_pk):
+    movie = get_object_or_404(Movie,pk=movies_pk)
+    serializer = MovieListSerializer(movie)
+    return Response(serializer.data)
