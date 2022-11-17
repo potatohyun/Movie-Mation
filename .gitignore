@@ -24,3 +24,7 @@ venv/
 .DS_Store
 node_modules
 /dist
+
+#최종본 완성시 이건 삭제할것
+0001_initial.py
+db.sqlite3
