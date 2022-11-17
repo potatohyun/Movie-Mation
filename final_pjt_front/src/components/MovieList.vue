@@ -1,7 +1,11 @@
 <template>
   <div class="movie-list">
     <h3>movielist</h3>
-    <MovieListItem/>
+    <MovieListItem
+      v-for="movie in movies"
+      :key="movie.pk"
+      :movie="movie"
+    />
   </div>
 </template>
 
@@ -11,6 +15,11 @@ export default {
     name: 'MovieList',
     components:{
         MovieListItem
+    },
+    computed: {
+      movies() {
+        return this.$store.state.movies
+      }
     }
 
 }
