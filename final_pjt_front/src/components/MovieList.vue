@@ -3,7 +3,7 @@
     <h3>movielist</h3>
     <MovieListItem
       v-for="movie in movies"
-      :key="movie.pk"
+      :key="movie.id"
       :movie="movie"
     />
   </div>
@@ -11,6 +11,7 @@
 
 <script>
 import MovieListItem from '@/components/MovieListItem';
+
 export default {
     name: 'MovieList',
     components:{

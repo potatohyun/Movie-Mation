@@ -10,7 +10,7 @@
       <hr>
       <label for="password2"> password confirmation : </label>
       <input type="password" id="password2" v-model="password2">
-      
+      <hr>
       <input type="submit" value="SignUp">
     </form>
   </div>
