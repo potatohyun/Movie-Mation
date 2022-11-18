@@ -3,9 +3,11 @@
     <h1>{{movie?.title}}</h1>
     <img :src="movie?.poster_path" alt="">
     <h5>{{movie?.overview}}</h5>
-    <!-- <h5>{{movie?.comments}}</h5> -->
+    <hr>
+    <h3>{{movie?.title}} <router-link :to="{ name : 'CommentCreateView' }">[댓글쓰기]</router-link></h3>
+    <hr>
     <CommentList :comments="movie?.comments"/>
-    <router-link :to="{ name : 'CommentCreateView' }">[댓글쓰기]</router-link>
+    <!-- <CommentCreateView :id="movie?.id"/> -->
   </div>
 </template>
 
@@ -18,7 +20,7 @@ const API_URL = "http://127.0.0.1:8000"
 export default {
     name: 'MovieDetailView',
     components:{
-      CommentList
+      CommentList,
     }, 
     data(){
       return{
@@ -27,7 +29,6 @@ export default {
     },
     created(){
       this.getMovieDetail()
-      this.getComments()
     },
     methods:{
       getMovieDetail(){
@@ -41,10 +42,6 @@ export default {
         })
         .catch(err=>console.log(err))
       },
-      getComments(){
-        
-        this.$store.dispatch('getComments')
-      }
     },
     
 }

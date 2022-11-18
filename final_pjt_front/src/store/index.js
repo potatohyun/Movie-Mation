@@ -15,7 +15,6 @@ export default new Vuex.Store({
   state: {
     movies: [],
     token: null,
-    comments: [],
     userInfo: null,
     isLogin: false,
     isLoginError: false
@@ -29,9 +28,6 @@ export default new Vuex.Store({
     GET_MOVIES(state, movies){
           state.movies = movies
       },
-    GET_COMMENTS(state, comments){
-      state.comments = comments
-    },
     SAVE_TOKEN(state, token) {
       state.token = token
       },
@@ -61,19 +57,6 @@ export default new Vuex.Store({
           context.commit('GET_MOVIES', res.data)
         )
       .catch(err=>console.log(err))
-    },
-    getComments(context){
-      axios({
-        method: 'get',
-        url: `${API_URL}/main/movies/comments/1`
-      })
-        .then(res=>{
-            console.log('123123123123123')
-            console.log(res,context) 
-            // context.commit('GET_COMMENTS', res.data) 
-          }
-        )
-        .catch(err => console.log(err))
     },
     signUp(context, payload) {
       // console.log(API_URL)
