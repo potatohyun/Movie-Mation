@@ -8,12 +8,17 @@
       <label for="password"> password : </label>
       <input type="password" id="password" v-model="password">
       <hr>
-      <input type="submit" value="logIn">
+      <input 
+        type="submit" 
+        value="logIn"
+      />
     </form>
   </div>
 </template>
 
 <script>
+// import {mapState, mapActions} from "vuex"
+
 export default {
   name: 'LogInView',
   data() {
@@ -22,6 +27,13 @@ export default {
       password: null,
     }
   },
+
+  // computed:{
+  //   ...mapState(["isLogin"], "isLoginError")
+  // },
+  // methods: {
+  //   ...mapActions(["login"])
+  // }
   methods: {
     logIn() {
       const username = this.username
