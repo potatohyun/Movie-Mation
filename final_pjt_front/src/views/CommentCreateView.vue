@@ -3,12 +3,12 @@
     <h1>댓글 작성</h1>
     <form @submit.prevent="createComment">
       <label for="title">제목: </label>
-      <input type="text" id="title" v-model="title">
+      <input type="text" id="title" v-model="title"><br>
       <label for="content">내용: </label>
       <textarea 
         id="content" cols="30" rows="10"
         v-model="content">
-      </textarea>
+      </textarea><br>
       <label for="grade">평점: </label>
       <input type="int" id="grade" v-model="grade">
       <input type="submit" id="submit">
@@ -28,13 +28,13 @@ export default {
     props: {
       id:Number
     },
-    // data(){
-    //   return{
-    //     title = null,
-    //     content = null,
-    //     grade = null,
-    //   }
-    // },
+    data(){
+      return{
+        title : null,
+        content : null,
+        grade : null,
+      }
+    },
     methods:{
       createComment(){
         const title = this.title

@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import MovieView from '@/views/MovieView'
 import MovieDetailView from '@/views/MovieDetailView'
 import CommentCreateView from '@/views/CommentCreateView'
-// import CommentDetailView from '@/views/CommentDetailView'
+import CommentDetailView from '@/views/CommentDetailView'
 import LogInView from '@/views/LogInView'
 import SignUpView from '@/views/SignUpView'
 
@@ -36,6 +36,12 @@ const routes = [
     name: 'CommentCreateView',
     component: CommentCreateView
   },
+  {
+    path: '/:id/detail',
+    name: 'CommentDetailView',
+    component: CommentDetailView
+  },
+
   // {
   //   path: '/:id/title',
   //   name: 'CommentDetailView',
