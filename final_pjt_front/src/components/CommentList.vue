@@ -14,14 +14,17 @@
 
   export default {
     name: 'CommentList',
+    props:{
+      comments:Array
+    },
     components:{
       CommentListItem
     },
-    computed:{
-      comments(){
-        return this.$store.state.comments
-      }
-    }
+    // computed:{
+    //   comments(){
+    //     return this.$store.state.comments
+    //   }
+    // }
   }
 </script>
 

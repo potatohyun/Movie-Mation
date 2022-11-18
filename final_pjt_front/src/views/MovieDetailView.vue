@@ -4,7 +4,7 @@
     <img :src="movie?.poster_path" alt="">
     <h5>{{movie?.overview}}</h5>
     <!-- <h5>{{movie?.comments}}</h5> -->
-    <CommentList/>
+    <CommentList :comments="movie?.comments"/>
     <router-link :to="{ name : 'CommentCreateView' }">[댓글쓰기]</router-link>
   </div>
 </template>
@@ -42,6 +42,7 @@ export default {
         .catch(err=>console.log(err))
       },
       getComments(){
+        
         this.$store.dispatch('getComments')
       }
     },

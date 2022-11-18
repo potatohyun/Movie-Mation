@@ -67,9 +67,11 @@ export default new Vuex.Store({
         method: 'get',
         url: `${API_URL}/main/movies/comments/1`
       })
-        .then(res=>
-          console.log(res,context) 
-          // context.commit('GET_COMMENTS', res.data) 
+        .then(res=>{
+            console.log('123123123123123')
+            console.log(res,context) 
+            // context.commit('GET_COMMENTS', res.data) 
+          }
         )
         .catch(err => console.log(err))
     },
