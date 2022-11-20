@@ -28,6 +28,13 @@ export default new Vuex.Store({
     GET_MOVIES(state, movies){
           state.movies = movies
       },
+    DELETE_COMMENT(state, comment, id){
+      console.log(id)
+      console.log(comment)
+      // state.comments = state.comments.filter((comment) => {
+      //   return !(comment.id === id)
+      // })
+    },
     SAVE_TOKEN(state, token) {
       state.token = token
       },

@@ -37,7 +37,7 @@ const routes = [
     component: CommentCreateView
   },
   {
-    path: '/:id/detail',
+    path: '/:id/detail/:pk',
     name: 'CommentDetailView',
     component: CommentDetailView
   },
