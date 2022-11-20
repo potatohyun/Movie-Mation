@@ -33,14 +33,16 @@ export default {
                 url: `${API_URL}/main/movies/comments/${this.$route.params.pk}`,
             })
             .then((res)=>{
-                console.log(res)
                 this.comment=res.data
             })
             .catch(err=>console.log(err))
         },
         deleteComment(){
-            this.$store.commit('DELETE_COMMENT', this.comment.id)
-            this.$router.push({ name:'MovieDetailView' })
+            const comment = this.comment
+            console.log(comment)
+            comment.splice(this.comment.id, 1)
+            this.$router.push({ name: "MovieDetailView" })
+
         }
     }
 }

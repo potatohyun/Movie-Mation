@@ -28,13 +28,12 @@ export default new Vuex.Store({
     GET_MOVIES(state, movies){
           state.movies = movies
       },
-    DELETE_COMMENT(state, comment, id){
-      console.log(id)
-      console.log(comment)
-      // state.comments = state.comments.filter((comment) => {
-      //   return !(comment.id === id)
-      // })
-    },
+    // DELETE_COMMENT(comment){
+    //   console.log(comment)
+    //   comment = comment.filter((comment) => {
+    //     return !(comment === comment)
+    //   })
+    // },
     SAVE_TOKEN(state, token) {
       state.token = token
       },
@@ -65,6 +64,9 @@ export default new Vuex.Store({
         )
       .catch(err=>console.log(err))
     },
+    // deleteComment(context, comment){
+    //   context.commit('DELETE_COMMENT', comment)
+    // },
     signUp(context, payload) {
       // console.log(API_URL)
       const username = payload.username
