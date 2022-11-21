@@ -51,7 +51,7 @@ def comment_detail(request, comment_pk):
             serializer.save()
             return Response(serializer.data)
 
-
+#댓글생성
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def comment_create(request, movies_pk):
@@ -64,7 +64,7 @@ def comment_create(request, movies_pk):
 
 
 ### 댓글 좋아요
-# @require_POST
+# @require_POST  # @api_view(['POST']) 얘랑 별 다를거 없음
 def like(request,comment_pk):
     comment = get_object_or_404(Comment, pk = comment_pk)
     # user = request.user
