@@ -20,9 +20,9 @@ export default new Vuex.Store({
     isLoginError: false
   },
   getters: {
-    // isLogin(state) {
-    //   return state.token ? true : false
-    // }
+    isLogin(state) {
+      return state.token ? true : false
+    }
   },
   mutations: {
     GET_MOVIES(state, movies){
