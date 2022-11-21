@@ -4,6 +4,7 @@ import MovieView from '@/views/MovieView'
 import MovieDetailView from '@/views/MovieDetailView'
 import CommentCreateView from '@/views/CommentCreateView'
 import CommentDetailView from '@/views/CommentDetailView'
+import CommentUpdateView from '@/views/CommentUpdateView'
 import LogInView from '@/views/LogInView'
 import SignUpView from '@/views/SignUpView'
 
@@ -40,6 +41,11 @@ const routes = [
     path: '/:id/detail/:pk',
     name: 'CommentDetailView',
     component: CommentDetailView
+  },
+  {
+    path: '/:id/update/:pk',
+    name: 'CommentUpdateView',
+    component: CommentUpdateView
   },
 
   // {

@@ -3,6 +3,7 @@
     <h1><router-link :to="{ name:'MovieDetailView' }">{{comment?.movie.title}}</router-link></h1>
     <hr>
     <h1>리뷰 제목 : {{comment?.title}}</h1>
+    <button @click="updateComment"> 수정 </button>
     <button @click="deleteComment"> 삭제 </button>
     <h3>리뷰 내용 : {{comment?.content}}</h3>
     <hr>
@@ -13,6 +14,8 @@
 
 <script>
 import axios from 'axios'
+import router from '@/router'
+
 const API_URL = "http://127.0.0.1:8000"
 
 export default {
@@ -33,16 +36,30 @@ export default {
                 url: `${API_URL}/main/movies/comments/${this.$route.params.pk}`,
             })
             .then((res)=>{
+                console.log(res.data)
                 this.comment=res.data
             })
             .catch(err=>console.log(err))
         },
+        updateComment(){
+            router.push({
+                name: "CommentUpdateView",
+                params:{
+                    comment: this.comment
+                }
+            })
+        },
         deleteComment(){
-            const comment = this.comment
-            console.log(comment)
-            comment.splice(this.comment.id, 1)
-            this.$router.push({ name: "MovieDetailView" })
-
+            axios({
+                method: 'delete',
+                url: `${API_URL}/main/movies/comments/${this.$route.params.pk}`,
+            })
+            .then(
+                alert('삭제완료!'),
+                router.push({ name: "MovieDetailView" })
+            )
+            .catch(err=>console.log(err))
+            
         }
     }
 }

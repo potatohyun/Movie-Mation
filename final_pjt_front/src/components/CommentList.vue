@@ -2,7 +2,7 @@
     <div class="comment-list">
       <h3>commentlist</h3>
       <CommentListItem
-        v-for="(comment) in comments"
+        v-for="comment in comments"
         :key="comment.id"
         :comment="comment"
       />
