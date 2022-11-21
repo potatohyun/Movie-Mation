@@ -7,6 +7,10 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
 
+# permission Decorators
+from rest_framework.decorators import permission_classes
+from rest_framework.permissions import IsAuthenticated
+
 
 # Create your views here.
 
@@ -30,6 +34,7 @@ def movies_detail(request,movies_pk):
 
 ### 단일 댓글
 @api_view(['GET', 'DELETE', 'PUT'])
+@permission_classes([IsAuthenticated])
 def comment_detail(request, comment_pk):    
     comment = get_object_or_404(Comment, pk=comment_pk)
     if request.method == 'GET':
@@ -48,6 +53,7 @@ def comment_detail(request, comment_pk):
 
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def comment_create(request, movies_pk):
     movie = get_object_or_404(Movie, pk=movies_pk)
     serializer = CommentPostSerializer(data=request.data)
@@ -56,3 +62,11 @@ def comment_create(request, movies_pk):
         # serializer.save(movie=movie,user = request.user)  # 로그인한사람들 user정보 자동으로 집어넣어주게하는 코드
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
+# def like(request,comment_pk):
+#     comment = get_object_or_404(Comment, pk = comment_pk)
+#     if comment.like_users.filter(pk=request.user.pk).exists():
+#         comment.like_users.remove(request.user)
+#     else:
+#         comment.like_users.add(request.user)
+#     serializer = OneCommentSerializer(comment)
+#     return Response(serializer.data)
