@@ -8,6 +8,8 @@ urlpatterns = [
     # path('movies/<int:movies_pk>/comments/', views.comment_create),
     path('comment/<int:comment_pk>/', views.comment_detail),
     path('movies/<int:movies_pk>/createcomments/', views.comment_create),
+    path('comments/<int:comment_pk>/like', views.like), # 게시글 좋아요(context로 전송)
+
    
     # # 필수 작성
     # path('schema/', SpectacularAPIView.as_view(), name='schema'),

@@ -62,11 +62,21 @@ def comment_create(request, movies_pk):
         # serializer.save(movie=movie,user = request.user)  # 로그인한사람들 user정보 자동으로 집어넣어주게하는 코드
         return Response(serializer.data, status=status.HTTP_201_CREATED) # 확인용
 
-# def like(request,comment_pk):
-#     comment = get_object_or_404(Comment, pk = comment_pk)
-#     if comment.like_users.filter(pk=request.user.pk).exists():
-#         comment.like_users.remove(request.user)
-#     else:
-#         comment.like_users.add(request.user)
-#     serializer = OneCommentSerializer(comment)
-#     return Response(serializer.data)
+
+### 댓글 좋아요
+# @require_POST
+def like(request,comment_pk):
+    comment = get_object_or_404(Comment, pk = comment_pk)
+    # user = request.user
+    like_users = comment.like_users.count()  # 좋아요 수
+    if comment.like_users.filter(pk=request.user.pk).exists():      # 요청의 user.pk가 존재하면 comment의 like_users를 삭제하고 is_liked 값을 False로 해준다. 
+        comment.like_users.remove(request.user)
+        is_liked = False
+    else:
+        comment.like_users.add(request.user)                        # 그게아니라면 comment의 like_users를 추가해주고 is_liked 값을 True 해준다. 
+        is_liked = True
+    context = {
+        'is_liked' : is_liked,  # 좋아요 여부
+        'like_users' : like_users   # 좋아요 수                   # Front작업을 위해 알립니다!!! Vue에서 response.data에서 꺼내쓰면 됩니당
+    }
+    return Response(context)                                        # 궁금한 점1 : comment모델에 like_users추가해줬는데 이건 좋아요누른사람들이 리스트로 들어가있는거야?
