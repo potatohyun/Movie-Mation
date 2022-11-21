@@ -60,7 +60,7 @@ def comment_create(request, movies_pk):
     if serializer.is_valid(raise_exception=True):
         serializer.save(movie=movie) # 로그인정보 병합되면 삭제
         # serializer.save(movie=movie,user = request.user)  # 로그인한사람들 user정보 자동으로 집어넣어주게하는 코드
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.data, status=status.HTTP_201_CREATED) # 확인용
 
 # def like(request,comment_pk):
 #     comment = get_object_or_404(Comment, pk = comment_pk)
