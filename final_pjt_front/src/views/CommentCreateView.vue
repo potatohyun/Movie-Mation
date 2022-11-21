@@ -61,8 +61,11 @@ export default {
         axios({
           method: 'post',
           url:`${API_URL}/main/movies/${this.$route.params.id}/createcomments/`,
+          headers:{
+                    Authorization: `Token ${ this.$store.state.token }`
+                },
           data: {title, content, grade, user},
-
+          
         })
           .then((res)=>{
             console.log(res)
