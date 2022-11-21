@@ -7,6 +7,7 @@
     <button @click="deleteComment"> 삭제 </button>
     <h3>리뷰 내용 : {{comment?.content}}</h3>
     <hr>
+    <h5>유저 : {{comment?.user}}</h5>
     <h5>작성 날짜 : {{comment?.created_at}}</h5>
     <h5>수정 날짜 : {{comment?.updated_at}}</h5>
   </div>
@@ -33,7 +34,7 @@ export default {
         getCommentDetail(){
             axios({
                 method: 'get',
-                url: `${API_URL}/main/movies/comments/${this.$route.params.pk}`,
+                url: `${API_URL}/main/comment/${this.$route.params.pk}`,
             })
             .then((res)=>{
                 console.log(res.data)

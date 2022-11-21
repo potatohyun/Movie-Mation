@@ -42,7 +42,7 @@
         getCommentDetail(){
             axios({
                 method: 'get',
-                url: `${API_URL}/main/movies/comments/${this.$route.params.pk}`,
+                url: `${API_URL}/main/comment/${this.$route.params.pk}`,
             })
             .then((res)=>{
                 console.log(res)
@@ -67,7 +67,7 @@
           }
           axios({
             method: 'put',
-            url:`${API_URL}/main/movies/comments/${this.$route.params.pk}/`,
+            url:`${API_URL}/main/comment/${this.$route.params.pk}/`,
             data: {title, content, grade},
   
           })

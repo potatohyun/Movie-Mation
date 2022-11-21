@@ -11,6 +11,10 @@
       </textarea><br>
       <label for="grade">평점: </label>
       <input type="int" id="grade" v-model="grade">
+      <!-- <input type="submit" id="submit"> -->
+      <!-- 유저 -->
+      <label for="user">user: </label>
+      <input type="int" id="user" v-model="user">
       <input type="submit" id="submit">
     </form>
   </div>
@@ -33,6 +37,7 @@ export default {
         title : null,
         content : null,
         grade : null,
+        user : null,
       }
     },
     methods:{
@@ -40,6 +45,7 @@ export default {
         const title = this.title
         const content = this.content
         const grade = this.grade
+        const user = this.user
         if(!title){
           alert('제목이 없어요')
           return
@@ -54,8 +60,8 @@ export default {
         }
         axios({
           method: 'post',
-          url:`${API_URL}/main/movies/${this.$route.params.id}/comments/`,
-          data: {title, content, grade},
+          url:`${API_URL}/main/movies/${this.$route.params.id}/createcomments/`,
+          data: {title, content, grade, user},
 
         })
           .then((res)=>{
