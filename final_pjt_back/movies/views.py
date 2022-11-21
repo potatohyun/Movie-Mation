@@ -52,5 +52,7 @@ def comment_create(request, movies_pk):
     movie = get_object_or_404(Movie, pk=movies_pk)
     serializer = CommentPostSerializer(data=request.data)
     if serializer.is_valid(raise_exception=True):
-        serializer.save(movie=movie)
+        serializer.save(movie=movie) # 로그인정보 병합되면 삭제
+        # serializer.save(movie=movie,user = request.user)  # 로그인한사람들 user정보 자동으로 집어넣어주게하는 코드
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+

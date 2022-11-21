@@ -20,11 +20,11 @@ class Movie(models.Model):
     vote_count = models.IntegerField()
 
 class Comment(models.Model):
-  # user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+  user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='user_comments')
   movie = models.ForeignKey(Movie, on_delete = models.CASCADE, related_name='comments')  # 댓글단 영화(FK)
   title = models.CharField(max_length=10)   # 댓글제목
   content = models.CharField(max_length=300)    # 댓글내용
   grade = models.IntegerField() # 평점
   created_at = models.DateTimeField(auto_now_add=True)
   updated_at = models.DateTimeField(auto_now = True) 
-    
+#   like_users = models.ManyToManyField(settings.AUTH_USER_MODEL,related_name='like_comments')

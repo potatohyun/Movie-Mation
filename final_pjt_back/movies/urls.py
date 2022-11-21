@@ -4,8 +4,11 @@ from . import views
 urlpatterns = [
     path('movies/', views.movies_list),
     path('movies/<int:movies_pk>/', views.movies_detail),
-    path('movies/comments/<int:comment_pk>/', views.comment_detail),
-    path('movies/<int:movies_pk>/comments/', views.comment_create),
+    # path('movies/comments/<int:comment_pk>/', views.comment_detail),
+    # path('movies/<int:movies_pk>/comments/', views.comment_create),
+    path('comment/<int:comment_pk>/', views.comment_detail),
+    path('movies/<int:movies_pk>/createcomments/', views.comment_create),
+   
     # # 필수 작성
     # path('schema/', SpectacularAPIView.as_view(), name='schema'),
     # # optional UI
