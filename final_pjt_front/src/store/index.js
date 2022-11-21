@@ -16,8 +16,8 @@ export default new Vuex.Store({
     movies: [],
     token: null,
     userInfo: null,
-    isLogin: false,
-    isLoginError: false
+    // isLogin: false,
+    // isLoginError: false
   },
   getters: {
     isLogin(state) {
@@ -90,13 +90,13 @@ export default new Vuex.Store({
     },
     
     logIn(context, payload) {
-      
+      const username = payload.username
+      const password = payload.password
       axios({
         method: 'post',
         url: `${API_URL}/accounts/login/`,
         data: {
-          username: payload.username,
-          password: payload.password,
+          username, password
         }
       })
         .then((res) => {

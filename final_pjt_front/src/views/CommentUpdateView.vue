@@ -12,6 +12,10 @@
         <label for="grade">평점: </label>
         <input type="int" id="grade" v-model="comment.grade">
         <input type="submit" id="submit">
+
+        <label for="user">user: </label>
+        <input type="int" id="user" v-model="comment.user">
+
       </form>
     </div>
   </template>
@@ -43,6 +47,9 @@
             axios({
                 method: 'get',
                 url: `${API_URL}/main/comment/${this.$route.params.pk}`,
+                headers:{
+                    Authorization: `Token ${ this.$store.state.token }`
+                }
             })
             .then((res)=>{
                 console.log(res)
@@ -54,6 +61,7 @@
           const title = this.comment.title
           const content = this.comment.content
           const grade = this.comment.grade
+          const user = this.comment.user
           if(!title){
             alert('제목이 없어요')
             return
@@ -68,14 +76,16 @@
           axios({
             method: 'put',
             url:`${API_URL}/main/comment/${this.$route.params.pk}/`,
-            data: {title, content, grade},
+            headers:{
+                    Authorization: `Token ${ this.$store.state.token }`
+                },
+            data: {title, content, grade, user},
   
           })
             .then((res)=>{
               console.log(res)
               alert("리뷰가 수정되었습니다.")
               router.push({ name: "MovieDetailView" })
-              
             })
             .catch(err=>console.log(err))
         }

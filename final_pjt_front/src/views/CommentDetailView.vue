@@ -29,18 +29,30 @@ export default {
     created(){
         this.getCommentDetail()
     },
-    
+    computed:{
+        isLogin(){
+            return this.$store.getters.isLogin
+        }
+    },
     methods:{
         getCommentDetail(){
-            axios({
+            if(this.isLogin){
+               axios({
                 method: 'get',
                 url: `${API_URL}/main/comment/${this.$route.params.pk}`,
+                headers:{
+                    Authorization: `Token ${ this.$store.state.token }`
+                }
             })
             .then((res)=>{
                 console.log(res.data)
                 this.comment=res.data
             })
-            .catch(err=>console.log(err))
+            .catch(err=>console.log(err)) 
+            } else {
+                alert('로그인이 필요합니다.')
+                router.push({ name: "LogInView" })
+            }
         },
         updateComment(){
             router.push({
@@ -53,7 +65,10 @@ export default {
         deleteComment(){
             axios({
                 method: 'delete',
-                url: `${API_URL}/main/movies/comments/${this.$route.params.pk}`,
+                url: `${API_URL}/main/comment/${this.$route.params.pk}`,
+                headers:{
+                    Authorization: `Token ${ this.$store.state.token }`
+                },
             })
             .then(
                 alert('삭제완료!'),
