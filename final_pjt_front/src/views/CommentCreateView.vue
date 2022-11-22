@@ -34,39 +34,45 @@ export default {
     },
     data(){
       return{
-        title : null,
-        content : null,
-        grade : null,
+        title : '제목을 입력하세요',
+        content : '내용을 입력하세요',
+        grade : 0,
         // user : null,
       }
     },
     methods:{
-      createComment(){
-        const title = this.title
-        const content = this.content
-        const grade = this.grade
-        // const user = this.user
-        if(!title){
-          alert('제목이 없어요')
-          return
-        } else if(!content){
-          console.log(this.title)
-          console.log(title)
-          alert('내용이 없어요')
-          return
-        } else if(!grade){
-          alert('평점주세요!')
-          return
-        }
-        axios({
-          method: 'post',
-          url:`${API_URL}/main/movies/${this.$route.params.id}/createcomments/`,
+      getToken: function () {
+        
+        const config = {
           headers:{
-                    Authorization: `Token ${ this.$store.state.token }`
-                },
-          data: {title, content, grade},
-          
-        })
+            Authorization: `Token ${ this.$store.state.token }`
+          }
+        }
+        return config
+      },
+      createComment(){
+        const config = this.getToken
+
+        const commentItem ={
+          title : this.title,
+          content : this.content,
+          grade : this.grade,
+        }
+        
+        // const user = this.user
+        // if(!title){
+        //   alert('제목이 없어요')
+        //   return
+        // } else if(!content){
+        //   console.log(this.title)
+        //   console.log(title)
+        //   alert('내용이 없어요')
+        //   return
+        // } else if(!grade){
+        //   alert('평점주세요!')
+        //   return
+        // }
+        axios.post(`${API_URL}/main/movies/${this.$route.params.id}/createcomments/`,commentItem, config)
           .then((res)=>{
             console.log(res)
             alert("소중한 리뷰 고맙습니다!")

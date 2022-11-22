@@ -37,6 +37,9 @@ export default new Vuex.Store({
     SAVE_TOKEN(state, token) {
       state.token = token
       },
+    DELETE_TOKEN(state){
+      state.token = null
+    },
     // loginSuccess(state, payload){
     //   state.isLogin = true
     //   state.isLoginError = false
@@ -47,11 +50,11 @@ export default new Vuex.Store({
     //   state.isLoginError = false
     //   state.userInfo = null
     // },
-    loginout(state) {
-      state.isLogin = false
-      state.isLoginError = false
-      state.userInfo = null
-    },
+    // loginout(state) {
+    //   state.isLogin = false
+    //   state.isLoginError = false
+    //   state.userInfo = null
+    // },
   },
   actions: {
     getMovies(context) {
@@ -102,12 +105,29 @@ export default new Vuex.Store({
         .then((res) => {
           // console.log(res)
           context.commit('SAVE_TOKEN', res.data.key)
-          alert("환영합니다!")
+          alert(`${username}님 환영합니다` )
           router.push({ name: "MovieView" })
         })
         .catch(() => {
           alert("이메일과 비밀번호를 확인하세요.")
         });
+    },
+
+    logOut(context){
+      axios({
+        method: 'post',
+        url: `${API_URL}/accounts/logout/`,
+        headers:{
+          Authorization: `Token ${ this.state.token }`
+        },
+      })
+        .then((res) => {
+          context.commit('DELETE_TOKEN', res.data.key)
+          alert('다음에 봐요!')
+          router.push({ name: "MovieView" })
+        })
+        .catch(err=>console.log(err))
+        }
     },
     // login(dispatch, loginObj) {
     //   // login --> 토큰 반환
@@ -169,7 +189,7 @@ export default new Vuex.Store({
     //       alert("이메일과 비밀번호를 확인하세요.");
     //     });
     // }
-  },
+  // },
   modules: {
   }
 })
