@@ -58,8 +58,8 @@ def comment_create(request, movies_pk):
     movie = get_object_or_404(Movie, pk=movies_pk)
     serializer = CommentPostSerializer(data=request.data)
     if serializer.is_valid(raise_exception=True):
-        serializer.save(movie=movie) # 로그인정보 병합되면 삭제
-        # serializer.save(movie=movie,user = request.user)  # 로그인한사람들 user정보 자동으로 집어넣어주게하는 코드
+        # serializer.save(movie=movie) # 로그인정보 병합되면 삭제
+        serializer.save(movie=movie,user = request.user)  # 로그인한사람들 user정보 자동으로 집어넣어주게하는 코드
         return Response(serializer.data, status=status.HTTP_201_CREATED) # 확인용
 
 
@@ -67,7 +67,7 @@ def comment_create(request, movies_pk):
 # @require_POST  # @api_view(['POST']) 얘랑 별 다를거 없음
 def like(request,comment_pk):
     comment = get_object_or_404(Comment, pk = comment_pk)
-    # user = request.user
+    user = request.user
     like_users = comment.like_users.count()  # 좋아요 수
     if comment.like_users.filter(pk=request.user.pk).exists():      # 요청의 user.pk가 존재하면 comment의 like_users를 삭제하고 is_liked 값을 False로 해준다. 
         comment.like_users.remove(request.user)

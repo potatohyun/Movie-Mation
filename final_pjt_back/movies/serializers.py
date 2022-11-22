@@ -36,15 +36,15 @@ class OneCommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
         fields = '__all__'
-        # read_only_fields = ('movie',)## 이게 참조로들고온 movie인가? 위에서 readonly해준거랑 이거랑 다른걸까?같으면 언제readonlyt?
+        read_only_fields = ('movie',)## 이게 참조로들고온 movie인가? 위에서 readonly해준거랑 이거랑 다른걸까?같으면 언제readonlyt?
 
 class CommentPostSerializer(serializers.ModelSerializer):
-    # username = serializers.CharField(source = 'user.username', read_only=True) # 출력값으로는 username이 나오게 하는 코드
+    username = serializers.CharField(source = 'user.username', read_only=True) # 출력값으로는 username이 나오게 하는 코드
 
     class Meta:
         model = Comment
         fields = '__all__'
-        read_only_fields = ('movie',)   # 로그인정보 병합되면 삭제
-        # read_only_fields = ('movie','user',) # 로그인정보 병합되면 user는 read만 되야하니까 이걸로 바꿔주기
+        # read_only_fields = ('movie',)   # 로그인정보 병합되면 삭제
+        read_only_fields = ('movie','user',) # 로그인정보 병합되면 user는 read만 되야하니까 이걸로 바꿔주기
 
 
