@@ -74,6 +74,12 @@ const routes = [
         name: 'AverageView',
         component: AverageView
       },
+      //랜덤
+      {
+        path: '/recommend/random',
+        name: 'RandomView',
+        component: RandomView
+      },
     ]
   },
   
