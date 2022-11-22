@@ -3,10 +3,10 @@
     <h1><router-link :to="{ name:'MovieDetailView' }">{{comment?.movie.title}}</router-link></h1>
     <hr>
     <h1>리뷰 제목 : {{comment?.title}}</h1>
-    <h3>{{comment?.like_users}}</h3>
+    <!-- <h3>좋아요한 유저 : {{comment?.like_users}}</h3> -->
     <h5></h5>
     <h3></h3>
-    <h3>좋아요 갯수 : {{likesCount}}</h3>
+    <h3>좋아요 갯수 : {{comment?.like_users.length}}</h3>
     <button @click="updateComment"> 수정 </button>
     <button @click="deleteComment"> 삭제 </button>
     <h3>리뷰 내용 : {{comment?.content}}</h3>
@@ -38,9 +38,6 @@ export default {
     computed:{
         isLogin(){
             return this.$store.getters.isLogin
-        },
-        likesCount(){
-            return this.comment?.like_users.length
         },
     },
     methods:{
@@ -115,15 +112,19 @@ export default {
             // 
             // console.log(this.comment)
             // const config = this.getToken()
+            
             axios({
                 method:'POST',
-                url:`${API_URL}/main/comments/${this.comment.id}/like/`,
+                url:`${API_URL}/main/comments/${this.comment.id}/like`,
                 headers:{
                     Authorization: `Token ${ this.$store.state.token }`
                 }
             })
-            .then(res=>{
+            .then((res)=>{
                 console.log(res.data)
+                console.log(res.data.like_users)
+                console.log(this.comment.like_users.length)
+                this.getCommentDetail()
                 
                 return 
 
