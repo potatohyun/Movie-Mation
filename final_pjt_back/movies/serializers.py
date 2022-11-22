@@ -51,3 +51,17 @@ class CommentPostSerializer(serializers.ModelSerializer):
         fields = ('title','content', 'grade','user',)
         read_only_fields = ('movie','user',)
 
+
+
+#### 영화추천
+class PopularMovie(serializers.ModelSerializer):
+
+    class Meta:
+        model = Movie
+        fields = ('title','popularity','poster_path','overview',)
+
+class PopularMovie(serializers.ModelSerializer):
+
+    class Meta:
+        model = Movie
+        fields = ('title','vote_average','poster_path','overview',)
