@@ -65,6 +65,7 @@ def comment_create(request, movies_pk):
 
 ### 댓글 좋아요
 # @require_POST  # @api_view(['POST']) 얘랑 별 다를거 없음
+@api_view(['POST'])
 def like(request,comment_pk):
     comment = get_object_or_404(Comment, pk = comment_pk)
     # user = request.user
