@@ -41,25 +41,49 @@ export default {
       }
     },
     methods:{
-      getToken: function () {
-        
+      // getToken: function () {
+      //   const config = {
+      //     headers:{
+      //       Authorization: `Token ${ this.$store.state.token }`
+      //     }
+      //   }
+      //   return config
+      // },
+      getToken: function(){
+        const key = this.$store.state.token
         const config = {
           headers:{
-            Authorization: `Token ${ this.$store.state.token }`
+            Authorization: `Token ${key}`
           }
         }
         return config
       },
-      createComment(){
-        const config = this.getToken
+      createComment: function(){
+        const config = this.getToken()
 
-        const commentItem ={
-          title : this.title,
-          content : this.content,
-          grade : this.grade,
-        }
-        
-        // const user = this.user
+        const reviewItem = {
+        title: this.title,
+        content: this.content,
+        grade: this.grade,
+      }
+      console.log(reviewItem)
+      if (reviewItem.title) {
+        axios.post(`${API_URL}/main/movies/${this.$route.params.id}/createcomments/`, reviewItem, config)
+          .then((res)=>{
+            console.log(res)
+            alert("소중한 리뷰 고맙습니다!")
+            router.push({ name: "MovieDetailView" })
+            
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+      } 
+
+        // const title = this.title
+        // const content = this.content
+        // const grade = this.grade
+
         // if(!title){
         //   alert('제목이 없어요')
         //   return
@@ -72,14 +96,21 @@ export default {
         //   alert('평점주세요!')
         //   return
         // }
-        axios.post(`${API_URL}/main/movies/${this.$route.params.id}/createcomments/`,commentItem, config)
-          .then((res)=>{
-            console.log(res)
-            alert("소중한 리뷰 고맙습니다!")
-            router.push({ name: "MovieDetailView" })
+        // axios({
+        //   method: 'post',
+        //   url: `${API_URL}/main/movies/${this.$route.params.id}/createcomments/`,
+        //   headers:{
+        //             Authorization: `Token ${ this.$store.state.token }`
+        //         },
+        //   data : {title, content, grade}
+        //   })
+        //   .then((res)=>{
+        //     console.log(res)
+        //     alert("소중한 리뷰 고맙습니다!")
+        //     router.push({ name: "MovieDetailView" })
             
-          })
-          .catch(err=>console.log(err))
+        //   })
+        //   .catch(err=>console.log(err))
       }
     }
 }
