@@ -12,6 +12,7 @@ import UserStatusView from '@/views/UserStatusView'
 import RecommendView from '@/views/RecommendView'
 import PopularityView from '@/views/PopularityView'
 import AverageView from '@/views/AverageView'
+import RandomView from '@/views/RandomView'
 
 Vue.use(VueRouter)
 

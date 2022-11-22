@@ -1,11 +1,11 @@
 <template>
   <div>
     <h3>RandomList</h3>
-    <!-- {{popularitymovies}} -->
+    <!-- {{randommovies}} -->
     <RandomListItem
       v-for="r_movie in randommovies"
       :key="r_movie.id"
-      :p_movie="r_movie"
+      :r_movie="r_movie"
     />
   </div>
 </template>
