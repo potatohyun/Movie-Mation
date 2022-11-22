@@ -43,8 +43,9 @@ class CommentPostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Comment
-        fields = '__all__'
+        # fields = '__all__'
         # read_only_fields = ('movie',)   # 로그인정보 병합되면 삭제
-        read_only_fields = ('movie','user',) # 로그인정보 병합되면 user는 read만 되야하니까 이걸로 바꿔주기
-
+        # read_only_fields = ('movie','user', ) # 로그인정보 병합되면 user는 read만 되야하니까 이걸로 바꿔주기
+        fields = ('title','content', 'grade','user','username')
+        read_only_fields = ('movie','user','username')
 

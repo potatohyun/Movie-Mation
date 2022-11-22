@@ -12,10 +12,6 @@
         <label for="grade">평점: </label>
         <input type="int" id="grade" v-model="comment.grade">
         <input type="submit" id="submit">
-
-        <label for="user">user: </label>
-        <input type="int" id="user" v-model="comment.user">
-
       </form>
     </div>
   </template>
@@ -61,7 +57,6 @@
           const title = this.comment.title
           const content = this.comment.content
           const grade = this.comment.grade
-          const user = this.comment.user
           if(!title){
             alert('제목이 없어요')
             return
@@ -79,7 +74,7 @@
             headers:{
                     Authorization: `Token ${ this.$store.state.token }`
                 },
-            data: {title, content, grade, user},
+            data: {title, content, grade},
   
           })
             .then((res)=>{
