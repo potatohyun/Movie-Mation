@@ -9,6 +9,10 @@ import LogInView from '@/views/LogInView'
 import SignUpView from '@/views/SignUpView'
 import UserStatusView from '@/views/UserStatusView'
 
+import RecommendView from '@/views/RecommendView'
+import PopularityView from '@/views/PopularityView'
+import AverageView from '@/views/AverageView'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -17,7 +21,6 @@ const routes = [
     name: 'MovieView',
     component: MovieView
   },
-  
   {
     path: '/login',
     name: 'LogInView',
@@ -53,12 +56,29 @@ const routes = [
     name: 'CommentUpdateView',
     component: CommentUpdateView
   },
+  //////////////// 영화추천 router ////////////////////////
+  {
+    path: '/recommend',
+    name: 'RecommendView',
+    component: RecommendView,
+    children: [
+      // 인기순
+      {
+        path: '/recommend/popularity',
+        name: 'PopularityView',
+        component: PopularityView
+      },
+      // 평점순
+      {
+        path: '/recommend/average',
+        name: 'AverageView',
+        component: AverageView
+      },
+    ]
+  },
+  
 
-  // {
-  //   path: '/:id/title',
-  //   name: 'CommentDetailView',
-  //   component: CommentDetailView
-  // },
+
 ]
 
 const router = new VueRouter({

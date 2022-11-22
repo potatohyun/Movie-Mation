@@ -2,8 +2,9 @@
   <div id="app">
     <nav>
       <router-link :to="{ name:'MovieView' }">Home</router-link> |
+      <router-link :to="{ name:'RecommendView' }">Recommend</router-link> |
       <router-link :to="{ name:'LogInView' }">Login</router-link> |
-      <router-link :to="{ name:'SignUpView'}">signup</router-link> |
+      <router-link :to="{ name:'SignUpView' }">signup</router-link> |
       <router-link :to="{ name:'UserStatusView'}">user</router-link> |
     </nav>
     <router-view/>

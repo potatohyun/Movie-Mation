@@ -58,10 +58,10 @@ class PopularMovie(serializers.ModelSerializer):
 
     class Meta:
         model = Movie
-        fields = ('title','popularity','poster_path','overview',)
+        fields = ('id','title','popularity','poster_path','overview','release_date')
 
-class PopularMovie(serializers.ModelSerializer):
+class AverageMovie(serializers.ModelSerializer):
 
     class Meta:
         model = Movie
-        fields = ('title','vote_average','poster_path','overview',)
+        fields = ('id','title','vote_average','poster_path','overview','release_date')
