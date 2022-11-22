@@ -7,6 +7,7 @@ import CommentDetailView from '@/views/CommentDetailView'
 import CommentUpdateView from '@/views/CommentUpdateView'
 import LogInView from '@/views/LogInView'
 import SignUpView from '@/views/SignUpView'
+import UserStatusView from '@/views/UserStatusView'
 
 Vue.use(VueRouter)
 
@@ -26,6 +27,11 @@ const routes = [
     path: '/signup',
     name: 'SignUpView',
     component: SignUpView
+  },
+  {
+    path: '/UserStatus',
+    name: 'UserStatusView',
+    component: UserStatusView
   },
   {
     path: '/:id',

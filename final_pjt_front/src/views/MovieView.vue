@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>몰?루</h1>
+    <h5>{{username}}</h5>
     <hr>
     <MovieList/>
   </div>
