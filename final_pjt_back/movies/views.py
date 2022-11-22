@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Movie, Genre, Comment
 from django.shortcuts import get_object_or_404, get_list_or_404
-from .serializers import MovieListSerializer,MovieDetailSerializer,OneCommentSerializer,CommentPostSerializer,PopularMovie
+from .serializers import MovieListSerializer,MovieDetailSerializer,OneCommentSerializer,CommentPostSerializer
 
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -46,7 +46,7 @@ def comment_detail(request, comment_pk):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
     elif request.method == 'PUT':
-        serializer = CommentPostSerializer(comment, data=request.data)
+        serializer = OneCommentSerializer(comment, data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(serializer.data)
@@ -64,7 +64,8 @@ def comment_create(request, movies_pk):
 
 
 ### 댓글 좋아요
-# @require_POST  # @api_view(['POST']) 얘랑 별 다를거 없음
+# @require_POST  # 
+@api_view(['POST']) #얘랑 별 다를거 없음
 def like(request,comment_pk):
     comment = get_object_or_404(Comment, pk = comment_pk)
     # user = request.user
@@ -80,18 +81,3 @@ def like(request,comment_pk):
         'like_users' : like_users   # 좋아요 수                   # Front작업을 위해 알립니다!!! Vue에서 response.data에서 꺼내쓰면 됩니당
     }
     return Response(context)                                        # 궁금한 점1 : comment모델에 like_users추가해줬는데 이건 좋아요누른사람들이 리스트로 들어가있는거야?
-
-
-
-### 영화 추천(인기순, 평점순, 개봉일순(최근))
-@api_view(['GET'])
-def popularity(request):
-    popularity_movies = Movie.objects.order_by('-popularity')
-    serializer = PopularMovie(popularity_movies, many=True)
-    return Response(serializer.data)
-
-@api_view(['GET'])
-def vote_average(request):
-    vote_average_movies = Movie.objects.order_by('-vote_average')
-    serializer = PopularMovie(vote_average_movies, many=True)
-    return Response(serializer.data)
