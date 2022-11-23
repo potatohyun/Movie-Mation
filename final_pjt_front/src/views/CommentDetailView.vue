@@ -115,7 +115,7 @@ export default {
             
             axios({
                 method:'POST',
-                url:`${API_URL}/main/comments/${this.comment.id}/like`,
+                url:`${API_URL}/main/comments/${this.comment.id}/like/`,
                 headers:{
                     Authorization: `Token ${ this.$store.state.token }`
                 }
