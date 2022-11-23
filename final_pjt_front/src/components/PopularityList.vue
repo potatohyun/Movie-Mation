@@ -2,7 +2,7 @@
   <div class="box mx-5">
     <br><h1>인기순으로 보여드립니당</h1><br>
     <!-- {{popularitymovies}} -->
-    <div class="row row-cols-3 row-cols-md-5 g-4" id="test">
+    <div class="row row-cols-3 row-cols-md-5 g-4" id="poplist">
       <PopularityListItem
         v-for="p_movie in popularitymovies"
         :key="p_movie.id"
@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style>
-#test{
+#poplist{
   margin-left: 200px;
 }
 </style>

@@ -1,11 +1,13 @@
 <template>
-  <div>
-    <h3>AverageList</h3>
-    <AverageListItem
-      v-for="a_movie in averagemovies"
-      :key="a_movie.id"
-      :a_movie="a_movie"
-    />
+  <div class="box mx-5">
+    <br><h1>투표순으로 보여드립니당</h1><br>
+    <div class="row row-cols-3 row-cols-md-5 g-4" id="averlist">
+      <AverageListItem
+        v-for="a_movie in averagemovies"
+        :key="a_movie.id"
+        :a_movie="a_movie"
+      />
+    </div>
   </div>
 </template>
 
@@ -44,5 +46,7 @@ export default {
 </script>
 
 <style>
-
+#averlist{
+  margin-left: 200px;
+}
 </style>

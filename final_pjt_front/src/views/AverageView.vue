@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>AverageView</h1>
+    <!-- <h1>AverageView</h1> -->
     <AverageList/>
   </div>
 </template>

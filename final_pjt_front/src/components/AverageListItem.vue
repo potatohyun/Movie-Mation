@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <!-- {{a_movie}} -->
-    <img :src="getImgUrl" alt="">
-    <h2>{{ a_movie.title }}</h2>
-    <p>{{ a_movie.overview }}</p>
+  <div class="col">
+    <div class="card h-100" @click="goMovieDetail">
+    <img class="movieimg mb-3" :src="getImgUrl" alt="">
+    <b>{{ a_movie.title }}</b>
+    <!-- <p>{{ a_movie.overview }}</p>
     <p>평점 : {{ a_movie.vote_average }}</p>
     <p>개봉일 : {{ a_movie.release_date }}</p>
     
@@ -15,8 +15,8 @@
     >
       [영화정보보기]
     </router-link> 
-    <hr>
-
+    <hr> -->
+    </div>
   </div>
 </template>
 
@@ -35,5 +35,9 @@ export default {
 </script>
 
 <style>
-
+.movieimg{
+  height: 23vw;
+  width: auto;
+  object-fit:cover
+}
 </style>

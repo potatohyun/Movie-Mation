@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Random</h1>
+    <!-- <h1>Random</h1> -->
     <RandomList/>
   </div>
 </template>
