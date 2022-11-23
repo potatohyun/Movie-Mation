@@ -1,20 +1,21 @@
 <template>
   <div class="col">
-    <div class="card h-100">
+    <div class="card h-100" @click="goMovieDetail" >
+    <!-- <div class="card h-100" @click="goMovieDetail" data-bs-toggle="modal" data-bs-target="#detailModal"> -->
       <img class="movieimg mb-3" :src="getImgUrl" alt="">
       <div class="title">
         <b>{{ movie.title }}</b>
       </div>
       <div class="link">
-        <router-link 
+        <!-- <router-link 
           :to="{ 
             name : 'MovieDetailView',
             params: {id:movie.id}
           }"
         >
-        <button type="button" class="btn btn-outline-danger">영화정보보기</button>
-        <!-- [영화정보보기] -->
-        </router-link>
+        <button type="button" class="btn btn-outline-danger btn-sm">영화정보보기</button>
+        [영화정보보기] 
+        </router-link> -->
       </div>
       <!-- <hr> -->
     </div>
@@ -32,17 +33,17 @@ export default {
       getImgUrl: `${this.movie?.poster_path}`
     }
   },
+  methods:{
+    goMovieDetail(){
+      this.$router.push({name : 'MovieDetailView', params: {id:this.movie.id}})
+    }
+  }
 }
 </script>
 
 <style>
 .movieimg{
-  height: 25vw;
+  height: 23vw;
+  object-fit:cover
 }
-/* 
-.link{
-  align-content: flex-end;
-	align-items: flex-end;
-} 
-*/
 </style>

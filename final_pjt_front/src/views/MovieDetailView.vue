@@ -1,14 +1,16 @@
 <template>
-  <div>
-    <h1>{{movie?.title}}</h1>
-    <img :src="movie?.poster_path" alt="">
-    <h5>{{movie?.overview}}</h5>
-    <hr>
-    <h3>{{movie?.title}} <router-link :to="{ name : 'CommentCreateView' }">[댓글쓰기]</router-link></h3>
-    <hr>
-    <CommentList :comments="movie?.comments"/>
-    <!-- <CommentCreateView :id="movie?.id"/> -->
-  </div>
+<div>
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog"> -->
+      <h1>{{movie?.title}}</h1>
+      <img :src="movie?.poster_path" alt="">
+      <h5>{{movie?.overview}}</h5>
+      <hr>
+      <h3>{{movie?.title}} <router-link :to="{ name : 'CommentCreateView' }">[댓글쓰기]</router-link></h3>
+      <hr>
+      <CommentList :comments="movie?.comments"/></div>
+    <!-- </div>
+  </div> -->
 </template>
 
 <script>
