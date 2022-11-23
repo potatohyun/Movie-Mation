@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Popularity</h1>
+    <!-- <h1>인기순으로 보여드립니당</h1> -->
     <PopularityList/>
   </div>
 </template>
@@ -18,5 +18,7 @@ export default {
 </script>
 
 <style>
-
+/* h1{
+  margin: 10px;
+} */
 </style>

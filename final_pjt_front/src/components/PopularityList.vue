@@ -1,12 +1,14 @@
 <template>
-  <div>
-    <h3>PopularityList</h3>
+  <div class="box mx-5">
+    <br><h1>인기순으로 보여드립니당</h1><br>
     <!-- {{popularitymovies}} -->
-    <PopularityListItem
-      v-for="p_movie in popularitymovies"
-      :key="p_movie.id"
-      :p_movie="p_movie"
-    />
+    <div class="row row-cols-3 row-cols-md-5 g-4" id="test">
+      <PopularityListItem
+        v-for="p_movie in popularitymovies"
+        :key="p_movie.id"
+        :p_movie="p_movie"
+      />
+    </div>
   </div>
 </template>
 
@@ -45,5 +47,7 @@ export default {
 </script>
 
 <style>
-
+#test{
+  margin-left: 200px;
+}
 </style>
