@@ -3,17 +3,10 @@
     <h1><router-link :to="{ name:'MovieDetailView' }">{{comment?.movie.title}}</router-link></h1>
     <hr>
     <h1>리뷰 제목 : {{comment?.title}}</h1>
-<<<<<<< HEAD
-    <h3>{{comment?.like_users}}</h3>
-    <h5></h5>
-    <h3></h3>
-    <h3>좋아요 갯수 : {{likesCount}}</h3>
-=======
     <!-- <h3>좋아요한 유저 : {{comment?.like_users}}</h3> -->
     <h5></h5>
     <h3></h3>
     <h3>좋아요 갯수 : {{comment?.like_users.length}}</h3>
->>>>>>> c8a4a4c515241c72b595bccc099f4d3b5e2e9314
     <button @click="updateComment"> 수정 </button>
     <button @click="deleteComment"> 삭제 </button>
     <h3>리뷰 내용 : {{comment?.content}}</h3>
@@ -46,12 +39,6 @@ export default {
         isLogin(){
             return this.$store.getters.isLogin
         },
-<<<<<<< HEAD
-        likesCount(){
-            return this.comment?.like_users.length
-        },
-=======
->>>>>>> c8a4a4c515241c72b595bccc099f4d3b5e2e9314
     },
     methods:{
         // updateTodoStatus(){
