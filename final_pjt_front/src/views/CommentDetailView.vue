@@ -125,30 +125,19 @@ export default {
             // 
             // console.log(this.comment)
             // const config = this.getToken()
-<<<<<<< HEAD
-            axios({
-                method:'POST',
-                url:`${API_URL}/main/comments/${this.comment.id}/like/`,
-=======
             
             axios({
                 method:'POST',
                 url:`${API_URL}/main/comments/${this.comment.id}/like`,
->>>>>>> c8a4a4c515241c72b595bccc099f4d3b5e2e9314
                 headers:{
                     Authorization: `Token ${ this.$store.state.token }`
                 }
             })
-<<<<<<< HEAD
-            .then(res=>{
-                console.log(res.data)
-=======
             .then((res)=>{
                 console.log(res.data)
                 console.log(res.data.like_users)
                 console.log(this.comment.like_users.length)
                 this.getCommentDetail()
->>>>>>> c8a4a4c515241c72b595bccc099f4d3b5e2e9314
                 
                 return 
 
