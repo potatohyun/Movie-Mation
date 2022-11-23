@@ -1,12 +1,13 @@
 <template>
-  <div>
-    <h3>RandomList</h3>
-    <!-- {{randommovies}} -->
+  <div class="box mx-5">
+    <br><h1>고르기 어려우시다구요?<br>그럼 이건 어떤가요?</h1><br>
+    <div class="row row-cols-3 row-cols-md-5 g-4" id="randlist">
     <RandomListItem
       v-for="r_movie in randommovies"
       :key="r_movie.id"
       :r_movie="r_movie"
     />
+    </div>
   </div>
 </template>
 
@@ -45,5 +46,7 @@ export default {
 </script>
 
 <style>
-
+#randlist{
+  margin-left: 200px;
+}
 </style>

@@ -1,23 +1,23 @@
 <template>
-  <div>
-    <!-- {{r_movie}} -->
-    <img :src="getImgUrl" alt="">
-    <h2>{{ r_movie.title }}</h2>
-    <p>{{ r_movie.overview }}</p>
-    <p>인기도 : {{ r_movie.popularity }}</p>
-    <p>평점 : {{ r_movie.vote_average }}</p>
-    <p>개봉일 : {{ r_movie.release_date }}</p>
+  <div class="col">
+    <div class="card h-100" @click="goMovieDetail">
+      <img class="movieimg mb-3" :src="getImgUrl" alt="">
+      <h2>{{ r_movie.title }}</h2>
+        <!-- <p>{{ r_movie.overview }}</p>
+        <p>인기도 : {{ r_movie.popularity }}</p>
+        <p>평점 : {{ r_movie.vote_average }}</p>
+        <p>개봉일 : {{ r_movie.release_date }}</p>
 
-    <router-link 
-      :to="{ 
-        name : 'MovieDetailView',
-        params: {id:r_movie.id}
-      }"
-    >
-      [영화정보보기]
-    </router-link> 
-    <hr>
-
+        <router-link 
+          :to="{ 
+            name : 'MovieDetailView',
+            params: {id:r_movie.id}
+          }"
+        >
+          [영화정보보기]
+        </router-link> 
+        <hr> -->
+    </div>
   </div>
 </template>
 
@@ -36,5 +36,9 @@ export default {
 </script>
 
 <style>
-
+.movieimg{
+  height: 23vw;
+  width: auto;
+  object-fit:cover
+}
 </style>
