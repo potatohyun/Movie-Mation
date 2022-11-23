@@ -54,14 +54,27 @@ class CommentPostSerializer(serializers.ModelSerializer):
 
 
 #### 영화추천
+'''
 class PopularMovie(serializers.ModelSerializer):
 
     class Meta:
         model = Movie
-        fields = ('title','popularity','poster_path','overview',)
+        fields = ('id','title','popularity','poster_path','overview','release_date')
 
-class PopularMovie(serializers.ModelSerializer):
+class AverageMovie(serializers.ModelSerializer):
 
     class Meta:
         model = Movie
-        fields = ('title','vote_average','poster_path','overview',)
+        fields = ('id','title','vote_average','poster_path','overview','release_date')
+
+class ReleaseDateMovie(serializers.ModelSerializer):
+
+    class Meta:
+        model = Movie
+        fields = ('id','title','vote_average','poster_path','overview','release_date')
+'''
+
+class RecommendMovie(serializers.ModelSerializer):
+    class Meta:
+        model = Movie
+        fields = ('id','title','popularity','vote_average','poster_path','overview','release_date')

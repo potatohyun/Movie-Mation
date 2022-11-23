@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Movie, Genre, Comment
 from django.shortcuts import get_object_or_404, get_list_or_404
-from .serializers import MovieListSerializer,MovieDetailSerializer,OneCommentSerializer,CommentPostSerializer,PopularMovie
+from .serializers import MovieListSerializer,MovieDetailSerializer,OneCommentSerializer,CommentPostSerializer,RecommendMovie
 
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -65,6 +65,7 @@ def comment_create(request, movies_pk):
 
 ### 댓글 좋아요
 # @require_POST  # @api_view(['POST']) 얘랑 별 다를거 없음
+@api_view(['POST'])
 def like(request,comment_pk):
     comment = get_object_or_404(Comment, pk = comment_pk)
     # user = request.user
@@ -86,12 +87,18 @@ def like(request,comment_pk):
 ### 영화 추천(인기순, 평점순, 개봉일순(최근))
 @api_view(['GET'])
 def popularity(request):
-    popularity_movies = Movie.objects.order_by('-popularity')
-    serializer = PopularMovie(popularity_movies, many=True)
+    popularity_movies = Movie.objects.order_by('-popularity')[:30]
+    serializer = RecommendMovie(popularity_movies, many=True)
     return Response(serializer.data)
 
 @api_view(['GET'])
 def vote_average(request):
-    vote_average_movies = Movie.objects.order_by('-vote_average')
-    serializer = PopularMovie(vote_average_movies, many=True)
+    vote_average_movies = Movie.objects.order_by('-vote_average')[:30]
+    serializer = RecommendMovie(vote_average_movies, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def random(request):
+    random_movies = Movie.objects.order_by('?')[:5]
+    serializer = RecommendMovie(random_movies, many=True)
     return Response(serializer.data)

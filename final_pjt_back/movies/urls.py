@@ -12,6 +12,7 @@ urlpatterns = [
 
     path('recommend/popularity/', views.popularity), # 인기순  
     path('recommend/average/', views.vote_average), # 평점 
+    path('recommend/random/', views.random), # 평점  
 
 
     # # 필수 작성

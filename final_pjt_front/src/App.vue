@@ -1,13 +1,16 @@
 <template>
   <div id="app">
+    <img class= "logo" src="./assets/moviemation_Agency_FB.png" alt="logo">
     <nav>
       <router-link :to="{ name:'MovieView' }">Home</router-link> |
+      <router-link :to="{ name:'RecommendView' }">Recommend</router-link> |
       <router-link :to="{ name:'LogInView' }">Login</router-link> |
-      <router-link :to="{ name:'SignUpView'}">signup</router-link> |
+      <router-link :to="{ name:'SignUpView' }">signup</router-link> |
       <router-link :to="{ name:'UserStatusView'}">user</router-link> |
     </nav>
     <router-view/>
   </div>
+
 </template>
 
 <style>
@@ -30,5 +33,10 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.logo {
+  width: 50vw;
+  padding: 30px;
 }
 </style>
