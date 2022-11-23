@@ -1,17 +1,23 @@
 <template>
-  <div>
-    <img :src="getImgUrl" alt="">
-    <br>
-    <p>{{ movie.title }}</p>
-    <router-link 
-      :to="{ 
-        name : 'MovieDetailView',
-        params: {id:movie.id}
-      }"
-    >
-      [영화정보보기]
-    </router-link>
-    <hr>
+  <div class="col">
+    <div class="card h-100">
+      <img class="movieimg mb-3" :src="getImgUrl" alt="">
+      <div class="title">
+        <b>{{ movie.title }}</b>
+      </div>
+      <div class="link">
+        <router-link 
+          :to="{ 
+            name : 'MovieDetailView',
+            params: {id:movie.id}
+          }"
+        >
+        <button type="button" class="btn btn-outline-danger">영화정보보기</button>
+        <!-- [영화정보보기] -->
+        </router-link>
+      </div>
+      <!-- <hr> -->
+    </div>
   </div>
 </template>
 
@@ -30,5 +36,13 @@ export default {
 </script>
 
 <style>
-
+.movieimg{
+  height: 25vw;
+}
+/* 
+.link{
+  align-content: flex-end;
+	align-items: flex-end;
+} 
+*/
 </style>
