@@ -31,6 +31,11 @@ export default {
       getImgUrl: `${this.a_movie?.poster_path}`
     }
   },
+  methods:{
+    goMovieDetail(){
+      this.$router.push({name : 'MovieDetailView', params: {id:this.a_movie.id}})
+    }
+  }
 }
 </script>
 

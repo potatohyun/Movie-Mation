@@ -2,7 +2,8 @@
   <div class="col">
     <div class="card h-100" @click="goMovieDetail">
       <img class="movieimg mb-3" :src="getImgUrl" alt="">
-      <h2>{{ r_movie.title }}</h2>
+       <div>
+        <b>{{ r_movie.title }}</b>
         <!-- <p>{{ r_movie.overview }}</p>
         <p>인기도 : {{ r_movie.popularity }}</p>
         <p>평점 : {{ r_movie.vote_average }}</p>
@@ -17,6 +18,7 @@
           [영화정보보기]
         </router-link> 
         <hr> -->
+      </div>
     </div>
   </div>
 </template>
@@ -32,6 +34,11 @@ export default {
       getImgUrl: `${this.r_movie?.poster_path}`
     }
   },
+  methods:{
+    goMovieDetail(){
+      this.$router.push({name : 'MovieDetailView', params: {id:this.r_movie.id}})
+    }
+  }
 }
 </script>
 
