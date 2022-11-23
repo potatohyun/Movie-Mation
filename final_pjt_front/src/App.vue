@@ -5,7 +5,7 @@
       alt="logo"
       @click="goMovieHome"
     >
-    <b-navbar class="navbar navbar-expand-sm bg-dark navbar-dark" sticky="true">
+    <b-navbar class="navbar navbar-expand-sm bg-dark navbar-dark" :sticky=true>
       <div class="container-fluid">
         <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
           <ul class="navbar-nav" v-if="this.$store.state.token">
@@ -26,7 +26,7 @@
             <li class="nav-item">
               <a class="nav-link">
                 <router-link :to="{ name:'UserStatusView'}">
-                  user
+                  UserInfo
                 </router-link>
               </a>
             </li>
