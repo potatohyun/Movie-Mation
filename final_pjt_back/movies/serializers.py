@@ -78,3 +78,11 @@ class RecommendMovie(serializers.ModelSerializer):
     class Meta:
         model = Movie
         fields = ('id','title','popularity','vote_average','poster_path','overview','release_date')
+
+
+#### 마이페이지
+class MycommentsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
+        fields = ('id','title','user','content','grade','like_users',)
+        # fields = '__all__'

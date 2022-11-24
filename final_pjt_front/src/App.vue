@@ -90,17 +90,20 @@ nav {
 
 nav a {
   font-weight: bold;
-  color: #b9333a;
+  color:silver;
   text-decoration-line: none;
 }
 
 nav a.router-link-exact-active {
-  color: #7543af;
+  color: #b9333a;
 }
 
 .logo {
   width: 50vw;
   padding: 30px;
+}
+.nav-item{
+  font-size: 25px;
 }
 
 </style>

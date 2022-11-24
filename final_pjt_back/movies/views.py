@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Movie, Genre, Comment
 from django.shortcuts import get_object_or_404, get_list_or_404
-from .serializers import MovieListSerializer,MovieDetailSerializer,OneCommentSerializer,CommentPostSerializer,RecommendMovie
+from .serializers import MovieListSerializer,MovieDetailSerializer,OneCommentSerializer,CommentPostSerializer,RecommendMovie, MycommentsSerializer
 
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -101,4 +101,13 @@ def vote_average(request):
 def random(request):
     random_movies = Movie.objects.order_by('?')[:5]
     serializer = RecommendMovie(random_movies, many=True)
+    return Response(serializer.data)
+
+
+### 마이페이지
+@api_view(['GET'])
+# @permission_classes([IsAuthenticated])
+def mypage(request):
+    comments = get_list_or_404(Comment)
+    serializer = MycommentsSerializer(comments,many=True)
     return Response(serializer.data)
