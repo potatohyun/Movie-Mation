@@ -89,8 +89,11 @@ export default new Vuex.Store({
           alert("회원가입이 성공적으로 이뤄졌습니다.")
           router.push({ name: "MovieView" })
         })
-        .catch(err =>console.log(err))
+        .catch((err) =>{
+          console.log(err)
           alert("아이디/비밀번호를 다시 확인해주세요.")
+        })
+          
     },
     
     logIn(context, payload) {
@@ -114,28 +117,28 @@ export default new Vuex.Store({
         })
     },
     // 밑에꺼 405뜨는 중
-    changePassword(context, payload) {
-      const new_password1 = payload.new_password1
-      const new_password2 = payload.new_password2
-      axios({
-        methods: 'post',
-        url: `${API_URL}/accounts/password/change/`,
-        headers:{
-          Authorization: `Token ${ this.state.token }`
-        },
-        data: {
-          new_password1, new_password2
-        }
-      })
-        .then((res) => {
-          console.log(res.data)
-          alert("성공적으로 변경되었습니다!")
-        })
-        .catch((err)=>{
-          console.log(err)
-          alert("비밀번호를 다시 확인해주세요!")
-        })
-    },
+    // changePassword(context, payload) {
+    //   const new_password1 = payload.new_password1
+    //   const new_password2 = payload.new_password2
+    //   axios({
+    //     methods: 'post',
+    //     url: `${API_URL}/accounts/password/change/`,
+    //     headers:{
+    //       Authorization: `Token ${ this.state.token }`
+    //     },
+    //     data: {
+    //       new_password1, new_password2
+    //     }
+    //   })
+    //     .then((res) => {
+    //       console.log(res.data)
+    //       alert("성공적으로 변경되었습니다!")
+    //     })
+    //     .catch((err)=>{
+    //       console.log(err)
+    //       alert("비밀번호를 다시 확인해주세요!")
+    //     })
+    // },
 
     logOut(context){
       axios({
