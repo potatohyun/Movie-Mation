@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b>{{myreview.title}}</b>
+    <b>{{myreview.title}}</b><hr>
   </div>
 </template>
 

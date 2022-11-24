@@ -1,7 +1,8 @@
 <template>
-  <div>
-    <!-- <h1>댓글 작성</h1>
-    <form @submit.prevent="createComment">
+  <div >
+    <div class="border border-dark m-3 me-5 me-5 rounded-2 py-4" >
+     <h1>댓글 작성</h1><hr>
+    <!--<form @submit.prevent="createComment">
       <label for="title">제목: </label>
       <input type="text" id="title" v-model="title"><br>
       <label for="content">내용: </label>
@@ -20,7 +21,6 @@
     <b-form @submit.prevent="createComment">
       <b-container class= "center-block" style="width: 500px;padding:15px;">
         <b-col>
-        
           <b-form-group id="title" label-for="input-1">
             <b-form-input
               id="input-1"
@@ -53,6 +53,7 @@
       </b-container>
       <b-button type="submit" id="submit" variant="primary">제출</b-button>
     </b-form>
+    </div>
   </div>
 </template>
 

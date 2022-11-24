@@ -1,50 +1,50 @@
 <template>
   <div>
-    <br>
-    <h1><router-link :to="{ name:'MovieDetailView' }">{{comment?.movie.title}}</router-link></h1>
-    <!-- <hr>
-    <h1>리뷰 제목 : {{comment?.title}}</h1>
-    <h3>좋아요한 유저 : {{comment?.like_users}}</h3>
-    <h5></h5>
-    <h3></h3>
-    <h3>좋아요 갯수 : {{comment?.like_users.length}}</h3>
-    <button @click="updateComment"> 수정 </button>
-    <button @click="deleteComment"> 삭제 </button>
-    <h3>리뷰 내용 : {{comment?.content}}</h3>
-    <button @click="likeComment">좋아요</button>
-    <hr>
-    <h5>유저 : {{comment?.user}}</h5>
-    <h5>작성 날짜 : {{comment?.created_at}}</h5>
-    <h5>수정 날짜 : {{comment?.updated_at}}</h5> -->
-    <br>
-  <b-card-group deck>
-
-    <b-card footer-tag="footer">
+    <div class="border border-dark m-3 me-5 me-5 rounded-2">
+        <div class="py-4">
+        <h1><router-link  :to="{ name:'MovieDetailView' }">{{comment?.movie.title}}</router-link></h1>
+        <!-- <hr>
         <h1>리뷰 제목 : {{comment?.title}}</h1>
-        <br>
-      <b-card-text>
+        <h3>좋아요한 유저 : {{comment?.like_users}}</h3>
+        <h5></h5>
+        <h3></h3>
+        <h3>좋아요 갯수 : {{comment?.like_users.length}}</h3>
+        <button @click="updateComment"> 수정 </button>
+        <button @click="deleteComment"> 삭제 </button>
         <h3>리뷰 내용 : {{comment?.content}}</h3>
-        <h5>작성자 : {{comment?.username}}</h5>
-        <div @click="likeComment">
-            <h3>
-                {{getHeart()}}
-                {{comment?.like_users.length}}
-            </h3>
-        </div>
+        <button @click="likeComment">좋아요</button>
         <hr>
-      </b-card-text>
-        <b-button @click="updateComment"> 수정 </b-button>
-        <b-button @click="deleteComment" variant="danger"> 삭제 </b-button>
-      <template #footer>
-        <em>
-            <h6>작성 날짜 : {{comment?.created_at}}</h6>
-            <h6>수정 날짜 : {{comment?.updated_at}}</h6>
-        </em>
-      </template>
-    </b-card>
-  </b-card-group>
-
-  </div>
+        <h5>유저 : {{comment?.user}}</h5>
+        <h5>작성 날짜 : {{comment?.created_at}}</h5>
+        <h5>수정 날짜 : {{comment?.updated_at}}</h5> -->
+        </div>
+        <b-card-group deck>
+        <b-card footer-tag="footer">
+        <h2>리뷰 제목 : {{comment?.title}}</h2>
+        <br>
+        <b-card-text>
+            <h3>리뷰 내용 : {{comment?.content}}</h3><br>
+            <h4>작성자 : {{comment?.username}}</h4><br>
+            <div @click="likeComment">
+                <h3>
+                    {{getHeart()}}
+                    {{comment?.like_users.length}}
+                </h3>
+            </div>
+            <hr>
+        </b-card-text>
+        <b-button @click="updateComment" class="me-1"> 수정 </b-button>
+        <b-button @click="deleteComment" variant="danger" class="ms-1"> 삭제 </b-button>
+        <template #footer>
+            <em>
+                <h6>작성 날짜 : {{comment?.created_at}}</h6>
+                <h6>수정 날짜 : {{comment?.updated_at}}</h6>
+            </em>
+        </template>
+        </b-card>
+        </b-card-group>
+        </div>
+    </div>
 </template>
 
 <script>

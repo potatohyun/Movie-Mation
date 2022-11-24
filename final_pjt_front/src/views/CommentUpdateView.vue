@@ -1,6 +1,6 @@
 <template>
-    <div>
-      <h1>댓글 수정</h1>
+    <div class="border border-dark m-3 me-5 me-5 rounded-2 py-4">
+      <h1>댓글 수정</h1><hr>
       <!-- <form @submit.prevent="updateComment">
         <label for="title">제목: </label>
         <input type="text" id="title" v-model="comment.title"><br>

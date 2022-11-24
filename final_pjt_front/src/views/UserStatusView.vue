@@ -1,10 +1,11 @@
 <template>
-    <div>
-      <br>
+    <div class="border border-dark m-3 me-5 me-5 rounded-2 pt-5 pb-3">
       <h1>{{username}}님 안녕하세요?</h1>
-      <br>
-      <button @click="logOut">로그아웃</button>
-      <br>
+      
+      <div class="re-btn">
+        <button type="button" class="btn btn-outline-dark"  @click="logOut">로그아웃</button>
+      </div><hr>
+      <div>
       <MyReviewList
       :myreviews="myreviews"
       />
@@ -36,6 +37,7 @@
         </b-form>
       </b-col>
     </b-container> -->
+      </div>
     </div>
   </template>
   
