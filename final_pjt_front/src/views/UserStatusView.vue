@@ -5,7 +5,10 @@
       <br>
       <button @click="logOut">로그아웃</button>
       <br>
-      <br>
+      <MyReviewList
+      :myreviews="myreviews"
+      />
+      
       <!-- <b-container class= "center-block" style="width: 300px;padding:15px;">
       <b-col>
         <b-form @submit.prevent="changePassword">
@@ -37,21 +40,26 @@
   </template>
   
   <script>
-  // import { mapActions} from "vuex";
   const API_URL = "http://127.0.0.1:8000"
   import axios from 'axios'
+  import MyReviewList from '@/components/MyReviewList'
 
   export default {
     name: 'UserStatusView',
+    components:{
+      MyReviewList,
+    },
     data(){
       return{
         username : null,
+        myreviews : null,
         // new_password1: null,
         // new_password2: null,
       }
     },
     created(){
       this.getUsername()
+      this.getMyReviews()
     },
     // 싸피에서 알려준 방법
     
@@ -67,7 +75,6 @@
       return config
       },
       logOut() {
-        console.log('Rb')
         this.$store.dispatch('logOut')
       },
       getUsername(){
@@ -78,6 +85,15 @@
           this.username = res.data.username
         }
       )},
+      getMyReviews(){
+        const config = this.getToken()
+        axios.get(`${API_URL}/main/mypage`, config)
+        .then((res)=>{
+          console.log(res.data)
+          this.myreviews = res.data
+        })
+        .catch(err=>console.log(err))
+      }
       // changePassword(){
       //   const new_password1 = this.new_password1
       //   const new_password2 = this.new_password2
@@ -87,7 +103,7 @@
       //     new_password2: new_password2
       //   }
       //   this.$store.dispatch('changePassword', payload)
-      // }  
+      // }
     }
   }
   </script>
