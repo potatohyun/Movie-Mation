@@ -1,16 +1,26 @@
 <template>
-<div>
-  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog"> -->
-      <h1>{{movie?.title}}</h1>
+  <div>
+    <div style="float:left; margin-right:20px;">
       <img :src="movie?.poster_path" alt="">
+    </div>
+    <div style="text-align:left">
+      <h1>{{movie?.title}}</h1> <!-- 스크롤 찾다 말  -->
+      <div 
+        data-bs-spy="scroll" 
+        data-bs-root-margin="0px 0px -40%" 
+        data-bs-smooth-scroll="true" 
+        class="scrollspy-example bg-light p-3 rounded-2" 
+        tabindex="0">
+      <!-- <p>{{movie?.overview}}</p> -->
       <h5>{{movie?.overview}}</h5>
+      </div>
+    </div>
+    <div style="text-align:left">
       <hr>
-      <h3>{{movie?.title}} <router-link :to="{ name : 'CommentCreateView' }">[댓글쓰기]</router-link></h3>
-      <hr>
-      <CommentList :comments="movie?.comments"/></div>
-    <!-- </div>
-  </div> -->
+      <router-link style="text-align:right" :to="{ name : 'CommentCreateView' }">[댓글쓰기]</router-link>
+      <CommentList :comments="movie?.comments"/>
+    </div>
+  </div>
 </template>
 
 <script>

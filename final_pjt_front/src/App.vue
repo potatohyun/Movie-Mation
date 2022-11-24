@@ -65,7 +65,9 @@
 export default {
   methods:{
     goMovieHome(){
-      this.$router.push({ name:'MovieView' })
+      if(this.$route.path!='/'){
+        this.$router.push({ name:'MovieView' })
+      }
     }
   }
 }
