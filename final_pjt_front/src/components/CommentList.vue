@@ -5,7 +5,7 @@
         :key="comment.id"
         :comment="comment"
       />
-      <div v-if="comments.length===0"><h4>아직 작성된 댓글이 없어요😥</h4></div>
+      <div v-if="comments?.length===0"><h4>아직 작성된 댓글이 없어요😥</h4></div>
     </div>
 </template>
   

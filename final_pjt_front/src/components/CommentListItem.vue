@@ -1,5 +1,5 @@
 <template>
-  <div class="contatiner" @click="goCemmentDetail">
+  <div class="contatiner" @click="goCommentDetail">
     <div class="row">
       <div class="box col-2"><p>평점 : {{comment.grade}}</p></div>
       <div class="box col-7"><h4>{{comment.title}}</h4></div>
@@ -24,9 +24,13 @@ export default {
     comment: Object
   },
   methods:{
-    goCemmentDetail(){
-
-      this.$router.push({name : 'CommentDetailView', params: {pk:this.comment.id}})
+    goCommentDetail(){
+      if(this.$store.state.token === null){
+        alert("로그인이 필요합니다.")
+        this.$router.push({name : 'LogInView'})
+      }else{
+        this.$router.push({name : 'CommentDetailView', params: {pk:this.comment.id}})
+      }
     }
   }
 }
