@@ -9,7 +9,7 @@
 
         <div class="row">
 
-          <div class="layout">
+          <div class="layout ">
             <div class="col mt-5 mb-4 ms-2" style="text-align:left">
               <h1 >{{movie?.title}}</h1> 
             </div >
@@ -20,20 +20,19 @@
               </h5>
             </div>
 
-            <div class="border border-dark m-3 me-5">
+            <div class="border border-dark m-3 me-5" id="testest">
               <div class="d-flex justify-content-between mx-3 mt-3 me-5" >
                 <h3>commentlist</h3>
                 <div style="font-size:1.4vw;"><router-link :to="{ name : 'CommentCreateView' }">[댓글쓰기]</router-link></div>
               </div>
-              <div style="">
-                <div class="col">
+              <div id="overview-scroll2">
+                <div class="col ms-3" style="text-align:left">
                   <!-- <router-link style="text-align:right" :to="{ name : 'CommentCreateView' }">[댓글쓰기]</router-link> -->
                   <CommentList :comments="movie?.comments"/>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -90,8 +89,19 @@ export default {
 /* style="overflow:auto; width:63vw; height:13vw; text-align:left" */
 #overview-scroll{
   overflow:auto; 
-  width:63vw; 
+  width:62vw; 
   height:13vw; 
+  text-align:left;
+  background-color: rgb(255, 239, 177);
+  margin-left: 15px;
+}
+#testest{
+  height: 26vw
+}
+#overview-scroll2{
+  overflow:auto; 
+  width: 100%;
+  height:22.5vw;
   text-align:left;
   background-color: cornsilk;
 }
