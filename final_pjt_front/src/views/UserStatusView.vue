@@ -6,7 +6,7 @@
       <button @click="logOut">로그아웃</button>
       <br>
       <br>
-      <b-container class= "center-block" style="width: 300px;padding:15px;">
+      <!-- <b-container class= "center-block" style="width: 300px;padding:15px;">
       <b-col>
         <b-form @submit.prevent="changePassword">
           <b-form-group id="new_password1" label="새로운 비밀번호:" label-for="input-1">
@@ -32,7 +32,7 @@
           <b-button type="submit" variant="primary">비밀번호수정</b-button>
         </b-form>
       </b-col>
-    </b-container>
+    </b-container> -->
     </div>
   </template>
   
@@ -46,8 +46,8 @@
     data(){
       return{
         username : null,
-        new_password1: null,
-        new_password2: null,
+        // new_password1: null,
+        // new_password2: null,
       }
     },
     created(){
@@ -78,16 +78,16 @@
           this.username = res.data.username
         }
       )},
-      changePassword(){
-        const new_password1 = this.new_password1
-        const new_password2 = this.new_password2
+      // changePassword(){
+      //   const new_password1 = this.new_password1
+      //   const new_password2 = this.new_password2
 
-        const payload = {
-          new_password1: new_password1,
-          new_password2: new_password2
-        }
-        this.$store.dispatch('changePassword', payload)
-      }  
+      //   const payload = {
+      //     new_password1: new_password1,
+      //     new_password2: new_password2
+      //   }
+      //   this.$store.dispatch('changePassword', payload)
+      // }  
     }
   }
   </script>
