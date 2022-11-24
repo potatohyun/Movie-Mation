@@ -106,7 +106,7 @@ export default new Vuex.Store({
         })
         .catch((err) =>{
           console.log(err)
-          alert("아이디/비밀번호를 다시 확인해주세요.")
+          alert("이미있는 아이디 또는 쉬운 비밀번호입니다.")
         })
           
     },
