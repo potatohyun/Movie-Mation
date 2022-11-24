@@ -15,7 +15,7 @@
               <a class="nav-link">
                 <router-link :to="{ name:'MovieView' }">
                   Home
-                </router-link>
+                </router-link> 
               </a>
             </li>
             <li class="nav-item">
@@ -104,6 +104,9 @@ nav a.router-link-exact-active {
 }
 .nav-item{
   font-size: 25px;
+}
+.nav-link{
+  margin: 0px 15px;
 }
 
 </style>
