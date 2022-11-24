@@ -92,7 +92,6 @@
           const title = this.comment.title
           const content = this.comment.content
           const grade = this.comment.grade
-          const user = this.$store.state.username
           // if(!title){
           //   alert('제목이 없어요')
           //   return
@@ -115,7 +114,7 @@
             headers:{
                     Authorization: `Token ${ this.$store.state.token }`
                 },
-            data: {title, content, grade, user},
+            data: {title, content, grade},
   
           })
             .then((res)=>{

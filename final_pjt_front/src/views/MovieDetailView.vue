@@ -23,7 +23,7 @@
             <div class="border border-dark m-3 me-5" id="testest">
               <div class="d-flex justify-content-between mx-3 mt-3 me-5" >
                 <h3>RE:VIEW</h3>
-                <div style="font-size:1.4vw;"><router-link :to="{ name : 'CommentCreateView' }">[리뷰쓰기]</router-link></div>
+                <div style="font-size:1.4vw;" @click="createComment">[리뷰쓰기]</div>
               </div>
               <div id="overview-scroll2">
                 <div class="col ms-3" style="text-align:left">
@@ -41,6 +41,7 @@
 
 <script>
 import axios from 'axios'
+import router from '@/router'
 import CommentList from '@/components/CommentList'
 
 const API_URL = "http://127.0.0.1:8000"
@@ -70,6 +71,15 @@ export default {
           this.movie=res.data
         })
         .catch(err=>console.log(err))
+      },
+      createComment(){
+        if(this.$store.state.token === null){
+          alert("로그인이 필요합니다.")
+          this.$router.push({name : 'LogInView'})
+        }else{
+          router.push ({ name : 'CommentCreateView' })
+        }
+        
       },
       getSummary(){
         if(this.movie?.overview===""){

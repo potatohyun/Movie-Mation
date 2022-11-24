@@ -26,8 +26,10 @@
         <h3>리뷰 내용 : {{comment?.content}}</h3>
         <h5>작성자 : {{comment?.username}}</h5>
         <div @click="likeComment">
-            
-            {{comment?.like_users.length}}
+            <h3>
+                {{getHeart()}}
+                {{comment?.like_users.length}}
+            </h3>
         </div>
         <hr>
       </b-card-text>
@@ -57,6 +59,7 @@ export default {
     data(){
         return{
             comment : null,
+            heart : ["&#128566"]
         }
     },
     created(){
@@ -161,8 +164,8 @@ export default {
             })
             .then((res)=>{
                 console.log(res.data)
-                console.log(res.data.like_users)
-                console.log(this.comment.like_users.length)
+                // console.log(res.data.like_users)
+                // console.log(this.comment.like_users.length)
                 this.getCommentDetail()
                 
                 return 
@@ -186,7 +189,14 @@ export default {
             //         userlike.splice(userlike.indexOf(usercode),1)
             //     }
             // })
+        },
+        getHeart(){
+        if(this.comment?.like_users.includes(this.$store.state.userInfo)===true){
+            return this.heart = "😍"
+        }else{
+            return this.heart = "😶"
         }
+      }
     }
 }
 </script>
