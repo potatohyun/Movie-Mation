@@ -29,7 +29,7 @@ front
 
 back
 - 가상환경 열기
-- pip install -r requirement.txt
+- pip install -r requirements.txt
 - python manage.py makemigrations
 - python manage.py migrate
 - python loaddata genre.json
