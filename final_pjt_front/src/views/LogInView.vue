@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <br>
+  <div class="border border-dark m-3 me-5 p-5 rounded-2">
     <h1>로그인</h1>
     <hr>
     <!-- <form @submit.prevent="logIn">

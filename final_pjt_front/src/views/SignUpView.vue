@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <br>
-    <h1>계정 생성</h1>
+  <div class="border border-dark m-3 me-5 me-5 rounded-2"  >
+    <h1 >계정 생성</h1>
     <hr>
     <!-- <form @submit.prevent="signUp">
       <label for="username">username : </label>
@@ -44,7 +43,7 @@
               비밀번호 길이는 8자 이상이어야 합니다.
             </b-form-invalid-feedback>
             <b-form-valid-feedback :state="validation_length">
-              적당한 길이입니다.
+              <!-- 적당한 길이입니다. 이 비밀버호는 안전합니다! -->
             </b-form-valid-feedback>
           </b-form-group>
           <br>
@@ -71,8 +70,8 @@
     </b-container>
     
 
+    </div>
 
-  </div>
 </template>
 
 <script>
@@ -130,3 +129,6 @@ export default {
   }
 }
 </script>
+<style>
+
+</style>
