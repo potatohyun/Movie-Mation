@@ -25,7 +25,10 @@
       <b-card-text>
         <h3>리뷰 내용 : {{comment?.content}}</h3>
         <h5>작성자 : {{comment?.username}}</h5>
-        <div @click="likeComment">좋아요 {{comment?.like_users.length}}</div>
+        <div @click="likeComment">
+            
+            {{comment?.like_users.length}}
+        </div>
         <hr>
       </b-card-text>
         <b-button @click="updateComment"> 수정 </b-button>

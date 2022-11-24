@@ -16,14 +16,14 @@
 
             <div class="col d-flex flex-wrap p-3 rounded-2 " id="overview-scroll" >
               <h5 class="col">
-                {{movie?.overview}}
+                {{movie?.overview}} {{getSummary()}}
               </h5>
             </div>
 
             <div class="border border-dark m-3 me-5" id="testest">
               <div class="d-flex justify-content-between mx-3 mt-3 me-5" >
-                <h3>commentlist</h3>
-                <div style="font-size:1.4vw;"><router-link :to="{ name : 'CommentCreateView' }">[댓글쓰기]</router-link></div>
+                <h3>RE:VIEW</h3>
+                <div style="font-size:1.4vw;"><router-link :to="{ name : 'CommentCreateView' }">[리뷰쓰기]</router-link></div>
               </div>
               <div id="overview-scroll2">
                 <div class="col ms-3" style="text-align:left">
@@ -53,6 +53,7 @@ export default {
     data(){
       return{
         movie : null,
+        summary : null,
       }
     },
     created(){
@@ -65,11 +66,16 @@ export default {
           url: `${API_URL}/main/movies/${this.$route.params.id}`,
         })
         .then((res)=>{
-          // console.log(res)
+          console.log(res.data.overview)
           this.movie=res.data
         })
         .catch(err=>console.log(err))
       },
+      getSummary(){
+        if(this.movie?.overview===""){
+          return this.summary = "줄거리가 없습니다."
+        }
+      }
     },
     
 }
