@@ -16,6 +16,7 @@ export default new Vuex.Store({
     movies: [],
     token: null,
     userInfo: null,
+    username: null,
     // isLogin: false,
     // isLoginError: false
   },
@@ -36,9 +37,23 @@ export default new Vuex.Store({
     // },
     SAVE_TOKEN(state, token) {
       state.token = token
-      },
+      axios({
+        method: 'get',
+        url : `${API_URL}/accounts/user/`,
+        headers:{
+          Authorization: `Token ${ this.state.token }`
+        },
+      })
+      .then((res) => {
+        console.log(res.data)
+        state.username = res.data.username
+        state.userInfo = res.data.pk
+      })
+    },
     DELETE_TOKEN(state){
       state.token = null
+      state.username = null
+      state.userInfo = null
     },
     // loginSuccess(state, payload){
     //   state.isLogin = true
