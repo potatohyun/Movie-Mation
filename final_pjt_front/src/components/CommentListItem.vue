@@ -1,7 +1,7 @@
 <template>
   <div class="contatiner" @click="goCommentDetail">
     <div class="row">
-      <div class="box col-2"><p>평점 : {{comment.grade}}</p></div>
+      <div class="box col-2"><p>{{commentStar()}}</p></div>
       <div class="box col-7"><h4>{{comment.title}}</h4></div>
       <div class="box col-3 pe-5" style="text-align:right"><p>아이디 : {{comment.id}}</p></div>
     <!-- <router-link
@@ -30,6 +30,19 @@ export default {
         this.$router.push({name : 'LogInView'})
       }else{
         this.$router.push({name : 'CommentDetailView', params: {pk:this.comment.id}})
+      }
+    },
+    commentStar(){
+      if(this.comment?.grade === 1){
+        return ('🌝🌚🌚🌚🌚')
+      }else if(this.comment?.grade === 2){
+        return ('🌝🌝🌚🌚')
+      }else if(this.comment?.grade === 3){
+        return ('🌝🌝🌝🌚🌚')
+      }else if(this.comment?.grade === 4){
+        return ('🌝🌝🌝🌝🌚')
+      }else{
+        return ('🌝🌝🌝🌝🌝')
       }
     }
   }

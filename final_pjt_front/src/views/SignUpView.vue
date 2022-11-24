@@ -37,8 +37,15 @@
               v-model="password1"
               type="password"
               placeholder="비밀번호를 입력하세요"
+              :state="validation_length"
               required
             ></b-form-input>
+            <b-form-invalid-feedback :state="validation_length">
+              비밀번호 길이는 8자 이상이어야 합니다.
+            </b-form-invalid-feedback>
+            <b-form-valid-feedback :state="validation_length">
+              적당한 길이입니다.
+            </b-form-valid-feedback>
           </b-form-group>
           <br>
           <b-form-group id="password2" label="비밀번호 확인:" label-for="input-3">
@@ -47,8 +54,15 @@
               v-model="password2"
               type="password"
               placeholder="비밀번호를 다시 입력하세요"
+              :state="validation_same"
               required
             ></b-form-input>
+            <b-form-invalid-feedback :state="validation_same">
+              비밀번호가 일치하지 않습니다.
+            </b-form-invalid-feedback>
+            <b-form-valid-feedback :state="validation_same">
+              비밀번호가 일치합니다.
+            </b-form-valid-feedback>
           </b-form-group>
           <br>
           <b-button type="submit" variant="primary">회원가입</b-button>
@@ -80,10 +94,20 @@ export default {
   // 싸피에서 알려준 방법
   data() {
     return {
-      username: null,
-      password1: null,
-      password2: null,
+      username: "",
+      password1: "",
+      password2: "",
     }
+  },
+  computed:{
+    validation_length(){
+      return this.password1.length > 7
+    },
+    
+    validation_same(){
+      return this.password2.length>7 && this.password2 === this.password1
+    },
+    
   },
   methods: {
     signUp() {

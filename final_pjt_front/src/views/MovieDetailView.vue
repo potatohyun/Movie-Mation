@@ -70,7 +70,12 @@ export default {
           console.log(res.data.overview)
           this.movie=res.data
         })
-        .catch(err=>console.log(err))
+        .catch((err)=>{
+          console.log(err)
+          alert("잘못된 접근입니다! 홈으로 이동합니다.")
+          router.push({ name: "MovieView" })
+        })
+
       },
       createComment(){
         if(this.$store.state.token === null){

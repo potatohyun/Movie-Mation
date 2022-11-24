@@ -8,6 +8,7 @@ import CommentUpdateView from '@/views/CommentUpdateView'
 import LogInView from '@/views/LogInView'
 import SignUpView from '@/views/SignUpView'
 import UserStatusView from '@/views/UserStatusView'
+import FourZeroFourView from '@/views/FourZeroFourView'
 
 import RecommendView from '@/views/RecommendView'
 import PopularityView from '@/views/PopularityView'
@@ -21,6 +22,7 @@ const routes = [
     path: '/',
     name: 'MovieView',
     component: MovieView
+    
   },
   {
     path: '/login',
@@ -83,8 +85,15 @@ const routes = [
       },
     ]
   },
-  
+  //404//
+  {
+    path: '*',
+    name: 'FourZeroFourView',
+    component: FourZeroFourView,
+    // redirect: 'FourZeroFourView'
 
+    // redirect: '/404'
+  },
 
 ]
 
