@@ -1,11 +1,13 @@
 <template>
   <div id="app">
-    <img class= "logo" 
+    <div>
+      <img class= "logo" 
       src="./assets/moviemation_Agency_FB.png" 
       alt="logo"
       @click="goMovieHome"
     >
-    <b-navbar class="navbar navbar-expand-sm bg-dark navbar-dark" :sticky=true>
+    </div>
+    <b-navbar class="navbar navbar-expand-sm bg-dark navbar-dark" style="" :sticky=true>
       <div class="container-fluid">
         <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
           <ul class="navbar-nav" v-if="this.$store.state.token">
@@ -100,4 +102,5 @@ nav a.router-link-exact-active {
   width: 50vw;
   padding: 30px;
 }
+
 </style>

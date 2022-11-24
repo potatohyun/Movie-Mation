@@ -44,7 +44,6 @@ li{
   
   position: fixed;
   height: 100%;
-  
   padding: 0%;
   /* padding-top: 20px; */
 }

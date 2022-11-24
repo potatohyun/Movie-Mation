@@ -1,6 +1,13 @@
 <template>
   <div>
-    <h5>{{username}} 어린이 환영합니다</h5>
+    <div class="welcome">
+      <div v-if="username!=null">
+        <h3><span style="color:violet"><b>🐣{{username}}🐣</b> 어린이 환영합니다 *^^*</span></h3>
+      </div>
+      <div v-else>
+        <h3><span style="color:skyblue"><b>🥚처음오신 어린이 환영합니다 *^^*🥚</b></span></h3>
+      </div>
+    </div>
     <MovieList/>
   </div>
 </template>
@@ -52,5 +59,8 @@ export default {
 </script>
 
 <style>
+.welcome{
+  margin: 35px;
+}
 
 </style>
