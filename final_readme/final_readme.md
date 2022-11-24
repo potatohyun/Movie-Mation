@@ -21,6 +21,21 @@
 - 소감
 
 ---
+## 프로젝트 사전준비
+front
+- npm install
+- npm install vue bootstrap-vue bootstrap
+- npm run serve
+
+back
+- 가상환경 열기
+- pip install -r requirement.txt
+- python manage.py makemigrations
+- python manage.py migrate
+- python loaddata genre.json
+- python loaddata animations.json
+- python manage.py runserver
+
 
 ## A. 프로젝트 소개
 
