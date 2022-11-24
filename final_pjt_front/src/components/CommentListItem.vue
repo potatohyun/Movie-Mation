@@ -25,6 +25,7 @@ export default {
   },
   methods:{
     goCemmentDetail(){
+
       this.$router.push({name : 'CommentDetailView', params: {pk:this.comment.id}})
     }
   }
