@@ -49,7 +49,7 @@
             <li class="nav-item">
               <a class="nav-link">
                 <router-link :to="{ name:'SignUpView' }">
-                  signup
+                  Signup
                 </router-link>
               </a>
             </li>
@@ -89,6 +89,7 @@ nav {
 nav a {
   font-weight: bold;
   color: #b9333a;
+  text-decoration-line: none;
 }
 
 nav a.router-link-exact-active {
