@@ -32,7 +32,7 @@ class OneMovieTitleSerializer(serializers.ModelSerializer):
 
 class OneCommentSerializer(serializers.ModelSerializer):
     movie = OneMovieTitleSerializer(read_only=True)
-
+    username = serializers.CharField(source = 'user.username', read_only=True)
     class Meta:
         model = Comment
         fields = '__all__'
@@ -48,8 +48,8 @@ class CommentPostSerializer(serializers.ModelSerializer):
         # fields = '__all__'
         # read_only_fields = ('movie',)   # 로그인정보 병합되면 삭제
         # read_only_fields = ('movie','user', ) # 로그인정보 병합되면 user는 read만 되야하니까 이걸로 바꿔주기
-        fields = ('title','content', 'grade','user',)
-        read_only_fields = ('movie','user',)
+        fields = ('title','content', 'grade','user')
+        read_only_fields = ('movie', 'user')
 
 
 

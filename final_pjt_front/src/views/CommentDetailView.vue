@@ -24,7 +24,7 @@
         <br>
       <b-card-text>
         <h3>리뷰 내용 : {{comment?.content}}</h3>
-        <h5>작성자 : {{comment?.user}}</h5>
+        <h5>작성자 : {{comment?.username}}</h5>
         <div @click="likeComment">좋아요 {{comment?.like_users.length}}</div>
         <hr>
       </b-card-text>
@@ -92,7 +92,6 @@ export default {
             .then((res)=>{
                 console.log(res.data)
                 this.comment=res.data
-                console.log(this.userInfo)
             })
             .catch(err=>console.log(err)) 
             } else {
@@ -101,14 +100,24 @@ export default {
             }
         },
         updateComment(){
+            if(this.comment?.user!==this.$store.state.userInfo){
+            alert('본인이 작성한 글만 수정가능합니다.')
+            return
+        } else{
             router.push({
                 name: "CommentUpdateView",
                 params:{
                     comment: this.comment
                 }
             })
+        }
+            
         },
         deleteComment(){
+            if(this.comment?.user!==this.$store.state.userInfo){
+            alert('본인이 작성한 글만 삭제가능합니다.')
+            return
+        } else{
             const config = this.getToken()
 
             axios.delete(`${API_URL}/main/comment/${this.$route.params.pk}/`, config)
@@ -130,6 +139,8 @@ export default {
                 
             )
             .catch(err=>console.log(err))
+        }
+            
             
         },
         likeComment(){
