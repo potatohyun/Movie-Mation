@@ -1,24 +1,41 @@
 <template>
-  <div>
-    <div style="float:left; margin-right:20px;">
-      <img :src="movie?.poster_path" alt="">
-    </div>
-    <div style="text-align:left">
-      <h1>{{movie?.title}}</h1> <!-- 스크롤 찾다 말  -->
-      <div 
-        data-bs-spy="scroll" 
-        data-bs-root-margin="0px 0px -40%" 
-        data-bs-smooth-scroll="true" 
-        class="scrollspy-example bg-light p-3 rounded-2" 
-        tabindex="0">
-      <!-- <p>{{movie?.overview}}</p> -->
-      <h5>{{movie?.overview}}</h5>
+  <div class="contatiner">
+    <div class="row">
+      <div class="box col-4">
+        <img id="imggg" :src="movie?.poster_path" alt="이미지가 없습니다." >
       </div>
-    </div>
-    <div style="text-align:left">
-      <hr>
-      <router-link style="text-align:right" :to="{ name : 'CommentCreateView' }">[댓글쓰기]</router-link>
-      <CommentList :comments="movie?.comments"/>
+
+      <div class="box col-8">
+
+        <div class="row">
+
+          <div class="layout">
+            <div class="col mt-5 mb-4 ms-2" style="text-align:left">
+              <h1 >{{movie?.title}}</h1> 
+            </div >
+
+            <div class="col d-flex flex-wrap p-3 rounded-2 " id="overview-scroll" >
+              <h5 class="col">
+                {{movie?.overview}}
+              </h5>
+            </div>
+
+            <div class="border border-dark m-3 me-5">
+              <div class="d-flex justify-content-between mx-3 mt-3 me-5" >
+                <h3>commentlist</h3>
+                <div style="font-size:1.4vw;"><router-link :to="{ name : 'CommentCreateView' }">[댓글쓰기]</router-link></div>
+              </div>
+              <div style="">
+                <div class="col">
+                  <!-- <router-link style="text-align:right" :to="{ name : 'CommentCreateView' }">[댓글쓰기]</router-link> -->
+                  <CommentList :comments="movie?.comments"/>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -60,5 +77,22 @@ export default {
 </script>
 
 <style>
-
+#imggg {
+  width: 100%;
+  object-fit: cover;
+}
+/* #overview-scroll{
+  overflow:auto; 
+  width:1350px;
+  height:200px;
+  background-color: cornsilk;
+} */
+/* style="overflow:auto; width:63vw; height:13vw; text-align:left" */
+#overview-scroll{
+  overflow:auto; 
+  width:63vw; 
+  height:13vw; 
+  text-align:left;
+  background-color: cornsilk;
+}
 </style>
