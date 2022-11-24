@@ -1,9 +1,10 @@
 <template>
   <div>
+    <br>
     <h1><router-link :to="{ name:'MovieDetailView' }">{{comment?.movie.title}}</router-link></h1>
-    <hr>
+    <!-- <hr>
     <h1>리뷰 제목 : {{comment?.title}}</h1>
-    <!-- <h3>좋아요한 유저 : {{comment?.like_users}}</h3> -->
+    <h3>좋아요한 유저 : {{comment?.like_users}}</h3>
     <h5></h5>
     <h3></h3>
     <h3>좋아요 갯수 : {{comment?.like_users.length}}</h3>
@@ -14,7 +15,30 @@
     <hr>
     <h5>유저 : {{comment?.user}}</h5>
     <h5>작성 날짜 : {{comment?.created_at}}</h5>
-    <h5>수정 날짜 : {{comment?.updated_at}}</h5>
+    <h5>수정 날짜 : {{comment?.updated_at}}</h5> -->
+    <br>
+  <b-card-group deck>
+
+    <b-card footer-tag="footer">
+        <h1>리뷰 제목 : {{comment?.title}}</h1>
+        <br>
+      <b-card-text>
+        <h3>리뷰 내용 : {{comment?.content}}</h3>
+        <h5>작성자 : {{comment?.user}}</h5>
+        <div @click="likeComment">좋아요 {{comment?.like_users.length}}</div>
+        <hr>
+      </b-card-text>
+        <b-button @click="updateComment"> 수정 </b-button>
+        <b-button @click="deleteComment" variant="danger"> 삭제 </b-button>
+      <template #footer>
+        <em>
+            <h6>작성 날짜 : {{comment?.created_at}}</h6>
+            <h6>수정 날짜 : {{comment?.updated_at}}</h6>
+        </em>
+      </template>
+    </b-card>
+  </b-card-group>
+
   </div>
 </template>
 
@@ -68,6 +92,7 @@ export default {
             .then((res)=>{
                 console.log(res.data)
                 this.comment=res.data
+                console.log(this.userInfo)
             })
             .catch(err=>console.log(err)) 
             } else {
