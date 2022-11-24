@@ -106,7 +106,7 @@ def random(request):
 
 ### 마이페이지
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated])
 def mypage(request):
     comments = get_list_or_404(Comment)
     serializer = MycommentsSerializer(comments,many=True)
