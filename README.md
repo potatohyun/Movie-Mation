@@ -1,6 +1,6 @@
 # <  FINAL_PJT  >
 
-![](assets/2022-11-25-04-40-37-image.png)
+![](final_readme/assets/2022-11-25-04-40-37-image.png)
 
 ---
 
@@ -81,7 +81,7 @@ back
 
 ## D. 데이터베이스 모델링(ERD)
 
-![](assets/2022-11-25-04-40-50-image.png)
+![](final_readme/assets/2022-11-25-04-40-50-image.png)
 
 --- 
 
@@ -120,9 +120,9 @@ back
 
 #### 로고 및 의미
 
-![](assets/2022-11-25-04-41-12-image.png)
+![](final_readme/assets/2022-11-25-04-41-12-image.png)
 
-<img src="assets/2022-11-25-04-41-19-image.png" title="" alt="" width="143">
+<img src="final_readme/assets/2022-11-25-04-41-19-image.png" title="" alt="" width="143">
 
 - 'MOVIEMATION' 의미
   
@@ -136,29 +136,29 @@ back
 
 - 메인페이지
 
-![](assets/2022-11-25-04-53-51-image.png)
+![](final_readme/assets/2022-11-25-04-53-51-image.png)
 
 - 디테일 페이지
 
-![](assets/2022-11-25-05-00-57-image.png)
+![](final_readme/assets/2022-11-25-05-00-57-image.png)
 
 - 댓글생성페이지(수정도 동일)
 
-![](assets/2022-11-25-05-01-51-image.png)
+![](final_readme/assets/2022-11-25-05-01-51-image.png)
 
 - 댓글 상세페이지
 
-![](assets/2022-11-25-05-02-23-image.png)
+![](final_readme/assets/2022-11-25-05-02-23-image.png)
 
 - 추천페이지
   
-  ![](assets/2022-11-25-05-06-53-image.png)
+  ![](final_readme/assets/2022-11-25-05-06-53-image.png)
 
-- 유저페이지    ![](assets/2022-11-25-05-07-07-image.png)
+- 유저페이지    ![](final_readme/assets/2022-11-25-05-07-07-image.png)
 
 - 로그인과 회원가입창
 
-![](assets/2022-11-25-05-09-09-image.png)
+![](final_readme/assets/2022-11-25-05-09-09-image.png)
 
 ##### 기능설명
 
