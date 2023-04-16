@@ -1,18 +1,19 @@
 <template>
-  <div>
-    <!-- <h5>{{comments.grade}}</h5> -->
-    <h5>{{comment.title}}</h5>
-    <h5>평점 : {{comment.grade}}</h5>
-    <h5>아이디 : {{comment.id}}</h5>
-    <router-link
+  <div class="contatiner" @click="goCommentDetail">
+    <div class="row">
+      <div class="box col-2"><p>{{commentStar()}}</p></div>
+      <div class="box col-7"><h4>{{comment.title}}</h4></div>
+      <div class="box col-3 pe-5" style="text-align:right"><p>아이디 : {{comment.id}}</p></div>
+    <!-- <router-link
       :to="{
         name: 'CommentDetailView',
         params: {pk: comment.id}
       }"
     >
       [리뷰상세보기]
-    </router-link>
+    </router-link> -->
     <hr>
+  </div>
   </div>
 </template>
 
@@ -21,6 +22,29 @@ export default {
   name: 'CommentListItem',
   props:{
     comment: Object
+  },
+  methods:{
+    goCommentDetail(){
+      if(this.$store.state.token === null){
+        alert("로그인이 필요합니다.")
+        this.$router.push({name : 'LogInView'})
+      }else{
+        this.$router.push({name : 'CommentDetailView', params: {pk:this.comment.id}})
+      }
+    },
+    commentStar(){
+      if(this.comment?.grade === 1){
+        return ('🌝🌚🌚🌚🌚')
+      }else if(this.comment?.grade === 2){
+        return ('🌝🌝🌚🌚')
+      }else if(this.comment?.grade === 3){
+        return ('🌝🌝🌝🌚🌚')
+      }else if(this.comment?.grade === 4){
+        return ('🌝🌝🌝🌝🌚')
+      }else{
+        return ('🌝🌝🌝🌝🌝')
+      }
+    }
   }
 }
 </script>

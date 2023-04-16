@@ -7,6 +7,13 @@ import CommentDetailView from '@/views/CommentDetailView'
 import CommentUpdateView from '@/views/CommentUpdateView'
 import LogInView from '@/views/LogInView'
 import SignUpView from '@/views/SignUpView'
+import UserStatusView from '@/views/UserStatusView'
+import FourZeroFourView from '@/views/FourZeroFourView'
+
+import RecommendView from '@/views/RecommendView'
+import PopularityView from '@/views/PopularityView'
+import AverageView from '@/views/AverageView'
+import RandomView from '@/views/RandomView'
 
 Vue.use(VueRouter)
 
@@ -15,8 +22,8 @@ const routes = [
     path: '/',
     name: 'MovieView',
     component: MovieView
+    
   },
-  
   {
     path: '/login',
     name: 'LogInView',
@@ -26,6 +33,11 @@ const routes = [
     path: '/signup',
     name: 'SignUpView',
     component: SignUpView
+  },
+  {
+    path: '/UserStatus',
+    name: 'UserStatusView',
+    component: UserStatusView
   },
   {
     path: '/:id',
@@ -47,12 +59,42 @@ const routes = [
     name: 'CommentUpdateView',
     component: CommentUpdateView
   },
+  //////////////// 영화추천 router ////////////////////////
+  {
+    path: '/recommend',
+    name: 'RecommendView',
+    component: RecommendView,
+    children: [
+      // 인기순
+      {
+        path: '/recommend/popularity',
+        name: 'PopularityView',
+        component: PopularityView
+      },
+      // 평점순
+      {
+        path: '/recommend/average',
+        name: 'AverageView',
+        component: AverageView
+      },
+      //랜덤
+      {
+        path: '/recommend/random',
+        name: 'RandomView',
+        component: RandomView
+      },
+    ]
+  },
+  //404//
+  {
+    path: '*',
+    name: 'FourZeroFourView',
+    component: FourZeroFourView,
+    // redirect: 'FourZeroFourView'
 
-  // {
-  //   path: '/:id/title',
-  //   name: 'CommentDetailView',
-  //   component: CommentDetailView
-  // },
+    // redirect: '/404'
+  },
+
 ]
 
 const router = new VueRouter({

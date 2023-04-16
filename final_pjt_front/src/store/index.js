@@ -16,13 +16,14 @@ export default new Vuex.Store({
     movies: [],
     token: null,
     userInfo: null,
-    isLogin: false,
-    isLoginError: false
+    username: null,
+    // isLogin: false,
+    // isLoginError: false
   },
   getters: {
-    // isLogin(state) {
-    //   return state.token ? true : false
-    // }
+    isLogin(state) {
+      return state.token ? true : false
+    }
   },
   mutations: {
     GET_MOVIES(state, movies){
@@ -36,7 +37,24 @@ export default new Vuex.Store({
     // },
     SAVE_TOKEN(state, token) {
       state.token = token
-      },
+      axios({
+        method: 'get',
+        url : `${API_URL}/accounts/user/`,
+        headers:{
+          Authorization: `Token ${ this.state.token }`
+        },
+      })
+      .then((res) => {
+        console.log(res.data)
+        state.username = res.data.username
+        state.userInfo = res.data.pk
+      })
+    },
+    DELETE_TOKEN(state){
+      state.token = null
+      state.username = null
+      state.userInfo = null
+    },
     // loginSuccess(state, payload){
     //   state.isLogin = true
     //   state.isLoginError = false
@@ -47,11 +65,11 @@ export default new Vuex.Store({
     //   state.isLoginError = false
     //   state.userInfo = null
     // },
-    loginout(state) {
-      state.isLogin = false
-      state.isLoginError = false
-      state.userInfo = null
-    },
+    // loginout(state) {
+    //   state.isLogin = false
+    //   state.isLoginError = false
+    //   state.userInfo = null
+    // },
   },
   actions: {
     getMovies(context) {
@@ -84,30 +102,74 @@ export default new Vuex.Store({
           // console.log(res)
           context.commit('SAVE_TOKEN', res.data.key)
           alert("회원가입이 성공적으로 이뤄졌습니다.")
-          router.push({ name: "LogInView" })
+          router.push({ name: "MovieView" })
         })
-        .catch(err =>console.log(err))
+        .catch((err) =>{
+          console.log(err)
+          alert("이미있는 아이디 또는 쉬운 비밀번호입니다.")
+        })
+          
     },
     
     logIn(context, payload) {
-      
+      const username = payload.username
+      const password = payload.password
       axios({
         method: 'post',
         url: `${API_URL}/accounts/login/`,
         data: {
-          username: payload.username,
-          password: payload.password,
+          username, password
         }
       })
         .then((res) => {
           // console.log(res)
           context.commit('SAVE_TOKEN', res.data.key)
-          alert("환영합니다!")
+          alert(`${username}님 환영합니다` )
           router.push({ name: "MovieView" })
         })
         .catch(() => {
-          alert("이메일과 비밀번호를 확인하세요.")
-        });
+          alert("아이디와 비밀번호를 확인하세요.")
+        })
+    },
+    // 밑에꺼 405뜨는 중
+    // changePassword(context, payload) {
+    //   const new_password1 = payload.new_password1
+    //   const new_password2 = payload.new_password2
+    //   axios({
+    //     methods: 'post',
+    //     url: `${API_URL}/accounts/password/change/`,
+    //     headers:{
+    //       Authorization: `Token ${ this.state.token }`
+    //     },
+    //     data: {
+    //       new_password1, new_password2
+    //     }
+    //   })
+    //     .then((res) => {
+    //       console.log(res.data)
+    //       alert("성공적으로 변경되었습니다!")
+    //     })
+    //     .catch((err)=>{
+    //       console.log(err)
+    //       alert("비밀번호를 다시 확인해주세요!")
+    //     })
+    // },
+
+    logOut(context){
+      axios({
+        method: 'post',
+        url: `${API_URL}/accounts/logout/`,
+        headers:{
+          Authorization: `Token ${ this.state.token }`
+        },
+      })
+        .then((res) => {
+          context.commit('DELETE_TOKEN', res.data.key)
+          alert('다음에 봐요!')
+          router.push({ name: "MovieView" })
+        })
+        .catch(err=>console.log(err))
+        }
     },
     // login(dispatch, loginObj) {
     //   // login --> 토큰 반환
@@ -169,7 +231,7 @@ export default new Vuex.Store({
     //       alert("이메일과 비밀번호를 확인하세요.");
     //     });
     // }
-  },
+  // },
   modules: {
   }
 })
